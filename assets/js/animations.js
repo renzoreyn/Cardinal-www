@@ -217,7 +217,7 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function boot() {
     gsap.registerPlugin(ScrollTrigger);
 
     runLoader().then(() => {
@@ -231,5 +231,14 @@
 
       ScrollTrigger.refresh();
     });
+  }
+
+  function whenReady(fn) {
+    if (window.__cardinalLayoutReady) fn();
+    else document.addEventListener("cardinal:layout-ready", fn, { once: true });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    whenReady(boot);
   });
 })();

@@ -10,58 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
-<body class="is-loading">
+<body class="is-loading" data-page="/generations.html">
   <div class="page-loader" aria-hidden="true"><div class="page-loader__mark">Cardinal</div><div class="page-loader__bar"><span></span></div><p class="page-loader__hint">loading research archive</p></div>
-  <div class="nav-progress" aria-hidden="true"></div>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
 
-  <header class="site-nav">
-    <div class="site-nav__inner">
-      <a href="/" class="site-nav__brand">
-        <span class="site-nav__brand-icon"><i data-lucide="flame" width="22" height="22"></i></span>
-        <span class="site-nav__brand-text">Cardinal</span>
-      </a>
-      <nav class="site-nav__desktop" aria-label="Main navigation">
-        <ul class="site-nav__links">
-          <li><a href="/"><i data-lucide="home" width="14" height="14"></i> Overview</a></li>
-          <li><a href="/philosophy.html"><i data-lucide="compass" width="14" height="14"></i> Philosophy</a></li>
-          <li><a href="/world.html"><i data-lucide="globe" width="14" height="14"></i> World</a></li>
-          <li><a href="/agents.html"><i data-lucide="users" width="14" height="14"></i> Agents</a></li>
-          <li><a href="/memory.html"><i data-lucide="brain" width="14" height="14"></i> Memory</a></li>
-          <li><a href="/generations.html" aria-current="page"><i data-lucide="git-branch" width="14" height="14"></i> Generations</a></li>
-          <li><a href="/emergence.html"><i data-lucide="sparkles" width="14" height="14"></i> Emergence</a></li>
-          <li><a href="/simulation.html"><i data-lucide="activity" width="14" height="14"></i> Simulation</a></li>
-          <li><a href="/observer.html"><i data-lucide="eye" width="14" height="14"></i> Observer</a></li>
-        </ul>
-      </nav>
-      <button class="site-nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span class="site-nav__toggle-icon site-nav__toggle-icon--open"><i data-lucide="menu" width="22" height="22"></i></span>
-        <span class="site-nav__toggle-icon site-nav__toggle-icon--close"><i data-lucide="x" width="22" height="22"></i></span>
-      </button>
-    </div>
-  </header>
-
-  <div class="mobile-nav" id="mobile-nav" aria-hidden="true" inert>
-    <button type="button" class="mobile-nav__backdrop" tabindex="-1" aria-label="Close menu"></button>
-    <div class="mobile-nav__panel" role="dialog" aria-label="Navigation">
-      <div class="mobile-nav__head">
-        <span class="mobile-nav__title">Cardinal</span>
-        <button type="button" class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x" width="22" height="22"></i></button>
-      </div>
-      <ul class="mobile-nav__list">
-        <li><a href="/"><span class="mobile-nav__icon"><i data-lucide="home" width="20" height="20"></i></span>Overview</a></li>
-        <li><a href="/philosophy.html"><span class="mobile-nav__icon"><i data-lucide="compass" width="20" height="20"></i></span>Philosophy</a></li>
-        <li><a href="/world.html"><span class="mobile-nav__icon"><i data-lucide="globe" width="20" height="20"></i></span>World</a></li>
-        <li><a href="/agents.html"><span class="mobile-nav__icon"><i data-lucide="users" width="20" height="20"></i></span>Agents</a></li>
-        <li><a href="/memory.html"><span class="mobile-nav__icon"><i data-lucide="brain" width="20" height="20"></i></span>Memory</a></li>
-        <li><a href="/generations.html" aria-current="page"><span class="mobile-nav__icon"><i data-lucide="git-branch" width="20" height="20"></i></span>Generations</a></li>
-        <li><a href="/emergence.html"><span class="mobile-nav__icon"><i data-lucide="sparkles" width="20" height="20"></i></span>Emergence</a></li>
-        <li><a href="/simulation.html"><span class="mobile-nav__icon"><i data-lucide="activity" width="20" height="20"></i></span>Simulation</a></li>
-        <li><a href="/observer.html"><span class="mobile-nav__icon"><i data-lucide="eye" width="20" height="20"></i></span>Observer</a></li>
-      </ul>
-    </div>
-  </div>
+  <div id="site-header"></div>
 
   <main>
     <header class="page-hero">
@@ -133,18 +85,13 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div><div class="site-footer__brand">Cardinal</div><p class="site-footer__tagline">Experimental autonomous civilization simulation. Research archive.</p></div>
-      <div><h4>Core</h4><ul><li><a href="/philosophy.html">Philosophy</a></li><li><a href="/world.html">World</a></li><li><a href="/agents.html">Agents</a></li><li><a href="/memory.html">Memory &amp; language</a></li></ul></div>
-      <div><h4>Systems</h4><ul><li><a href="/generations.html">Generations</a></li><li><a href="/emergence.html">Emergence</a></li><li><a href="/simulation.html">Simulation loop</a></li><li><a href="/observer.html">Observer layer</a></li></ul></div>
-    </div>
-    <div class="site-footer__bottom container"><span>Cardinal research documentation</span><span class="site-footer__credit">made with <i data-lucide="heart" width="12" height="12" class="site-footer__heart" aria-hidden="true"></i> by <a href="https://renzoreyn.dev" target="_blank" rel="noopener noreferrer">@renzoreyn</a></span></div>
-  </footer>
+  <div id="site-footer"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="/assets/js/nav-config.js"></script>
+  <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/context-menu.js"></script>
   <script src="/assets/js/animations.js"></script>
