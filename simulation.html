@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulation | Cardinal</title>
+  <meta name="description" content="The Substrate: ticks, events, and immutable history in Cardinal." />
+  <title>Substrate | Cardinal</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,9 +20,9 @@
     <header class="page-hero">
       <div class="hero__bg"><div class="hero__orb hero__orb--1"></div><div class="hero__grid"></div></div>
       <div class="page-hero__inner container">
-        <div class="page-hero__icon"><i data-lucide="activity" width="40" height="40"></i></div>
-        <h1 class="page-hero__title">Simulation loop</h1>
-        <p class="page-hero__desc">The world only appends history. Nothing gets edited out.</p>
+        <div class="page-hero__icon"><i data-lucide="cpu" width="40" height="40"></i></div>
+        <h1 class="page-hero__title">Substrate loop</h1>
+        <p class="page-hero__desc">The Substrate only appends history. Nothing inside Cardinal gets edited out.</p>
       </div>
     </header>
 
@@ -32,17 +33,17 @@
           <div class="tick-item reveal">
             <p class="tick-item__label">Micro tick</p>
             <h3 class="tick-item__title">Every frame</h3>
-            <p class="tick-item__desc">Agent movement and physics. Resource consumption and regeneration. Environmental state update. Collision and proximity detection.</p>
+            <p class="tick-item__desc">Scintilla movement and physics. Resource consumption and regeneration. Environmental state update. Collision and proximity detection.</p>
           </div>
           <div class="tick-item reveal">
             <p class="tick-item__label">Cognitive tick</p>
             <h3 class="tick-item__title">Every N micro ticks</h3>
-            <p class="tick-item__desc">Need state evaluation. Action selection via policy. Memory read/write. Social evaluation. Communication signal emission and reception.</p>
+            <p class="tick-item__desc">Need state evaluation. Action selection via policy. Continuity read/write. Social evaluation. Communication signal emission and reception.</p>
           </div>
           <div class="tick-item reveal">
             <p class="tick-item__label">Chronicle tick</p>
             <h3 class="tick-item__title">Every simulated day</h3>
-            <p class="tick-item__desc">Event aggregation and tagging. Memory decay application. History compression. Long-term pattern detection. Cultural marker evaluation.</p>
+            <p class="tick-item__desc">Event aggregation and tagging. Continuity decay application. History compression. Long-term pattern detection. Cultural marker evaluation.</p>
           </div>
         </div>
       </div>
@@ -53,9 +54,9 @@
         <p class="story__chapter">Event system</p>
         <h2 class="story__heading">Immutable events</h2>
         <div class="event-list reveal-group">
-          <div class="event-chip reveal"><i data-lucide="baby" width="14" height="14"></i> EVENT_AGENT_BORN</div>
-          <div class="event-chip reveal"><i data-lucide="skull" width="14" height="14"></i> EVENT_AGENT_DIED</div>
-          <div class="event-chip reveal"><i data-lucide="heart" width="14" height="14"></i> EVENT_AGENT_REPRODUCED</div>
+          <div class="event-chip reveal"><i data-lucide="baby" width="14" height="14"></i> EVENT_SCINTILLA_BORN</div>
+          <div class="event-chip reveal"><i data-lucide="skull" width="14" height="14"></i> EVENT_SCINTILLA_DIED</div>
+          <div class="event-chip reveal"><i data-lucide="heart" width="14" height="14"></i> EVENT_SCINTILLA_REPRODUCED</div>
           <div class="event-chip reveal"><i data-lucide="share-2" width="14" height="14"></i> EVENT_KNOWLEDGE_TRANSFERRED</div>
           <div class="event-chip reveal"><i data-lucide="unlink" width="14" height="14"></i> EVENT_KNOWLEDGE_LOST</div>
           <div class="event-chip reveal"><i data-lucide="flame" width="14" height="14"></i> EVENT_FIRE_DISCOVERED</div>
@@ -67,7 +68,7 @@
           <div class="event-chip reveal"><i data-lucide="leaf" width="14" height="14"></i> EVENT_SEASON_CHANGED</div>
         </div>
         <p class="story__body mt-2">
-          Chronicle tick reads the event stream and builds compressed narrative: not "agent 0042 gathered berries at tick 18273" but "group near the river valley has sustained itself on river resources for 14 simulated years."
+          Chronicle tick reads the event stream and builds compressed narrative: not "scintilla 0042 gathered berries at tick 18273" but "group near the river valley has sustained itself on river resources for 14 simulated years."
         </p>
       </div>
     </section>
@@ -78,7 +79,7 @@
         <h2 class="story__heading">The why alongside the what</h2>
         <pre class="code-block reveal">{
   "tick": 18273,
-  "agent": "agent_0042",
+  "scintilla": "scintilla_0042",
   "action": "gather",
   "resource": "berries",
   "location": [22, 91],
@@ -90,7 +91,7 @@
   },
   "trigger": "hunger_threshold_crossed"
 }</pre>
-        <p class="story__body">An action without its trigger is just noise.</p>
+        <p class="story__body">An action without its trigger is just noise. Invisible to Scintillae. Readable by the Administrator.</p>
         <div class="hero__cta"><a href="/observer.html" class="btn btn--primary">Observer layer <i data-lucide="arrow-right" width="16" height="16"></i></a></div>
       </div>
     </section>
