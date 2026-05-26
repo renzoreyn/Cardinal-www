@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Observer | Cardinal</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="is-loading">
+  <div class="page-loader" aria-hidden="true"><div class="page-loader__mark">Cardinal</div><div class="page-loader__bar"><span></span></div><p class="page-loader__hint">loading research archive</p></div>
+  <div class="nav-progress" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="site-nav__brand">
+        <span class="site-nav__brand-icon"><i data-lucide="flame" width="22" height="22"></i></span>
+        <span class="site-nav__brand-text">Cardinal</span>
+      </a>
+      <nav class="site-nav__desktop" aria-label="Main navigation">
+        <ul class="site-nav__links">
+          <li><a href="/"><i data-lucide="home" width="14" height="14"></i> Overview</a></li>
+          <li><a href="/philosophy.html"><i data-lucide="compass" width="14" height="14"></i> Philosophy</a></li>
+          <li><a href="/world.html"><i data-lucide="globe" width="14" height="14"></i> World</a></li>
+          <li><a href="/agents.html"><i data-lucide="users" width="14" height="14"></i> Agents</a></li>
+          <li><a href="/memory.html"><i data-lucide="brain" width="14" height="14"></i> Memory</a></li>
+          <li><a href="/generations.html"><i data-lucide="git-branch" width="14" height="14"></i> Generations</a></li>
+          <li><a href="/emergence.html"><i data-lucide="sparkles" width="14" height="14"></i> Emergence</a></li>
+          <li><a href="/simulation.html"><i data-lucide="activity" width="14" height="14"></i> Simulation</a></li>
+          <li><a href="/observer.html" aria-current="page"><i data-lucide="eye" width="14" height="14"></i> Observer</a></li>
+        </ul>
+      </nav>
+      <button class="site-nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="site-nav__toggle-icon site-nav__toggle-icon--open"><i data-lucide="menu" width="22" height="22"></i></span>
+        <span class="site-nav__toggle-icon site-nav__toggle-icon--close"><i data-lucide="x" width="22" height="22"></i></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true" inert>
+    <button type="button" class="mobile-nav__backdrop" tabindex="-1" aria-label="Close menu"></button>
+    <div class="mobile-nav__panel" role="dialog" aria-label="Navigation">
+      <div class="mobile-nav__head">
+        <span class="mobile-nav__title">Cardinal</span>
+        <button type="button" class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x" width="22" height="22"></i></button>
+      </div>
+      <ul class="mobile-nav__list">
+        <li><a href="/"><span class="mobile-nav__icon"><i data-lucide="home" width="20" height="20"></i></span>Overview</a></li>
+        <li><a href="/philosophy.html"><span class="mobile-nav__icon"><i data-lucide="compass" width="20" height="20"></i></span>Philosophy</a></li>
+        <li><a href="/world.html"><span class="mobile-nav__icon"><i data-lucide="globe" width="20" height="20"></i></span>World</a></li>
+        <li><a href="/agents.html"><span class="mobile-nav__icon"><i data-lucide="users" width="20" height="20"></i></span>Agents</a></li>
+        <li><a href="/memory.html"><span class="mobile-nav__icon"><i data-lucide="brain" width="20" height="20"></i></span>Memory</a></li>
+        <li><a href="/generations.html"><span class="mobile-nav__icon"><i data-lucide="git-branch" width="20" height="20"></i></span>Generations</a></li>
+        <li><a href="/emergence.html"><span class="mobile-nav__icon"><i data-lucide="sparkles" width="20" height="20"></i></span>Emergence</a></li>
+        <li><a href="/simulation.html"><span class="mobile-nav__icon"><i data-lucide="activity" width="20" height="20"></i></span>Simulation</a></li>
+        <li><a href="/observer.html" aria-current="page"><span class="mobile-nav__icon"><i data-lucide="eye" width="20" height="20"></i></span>Observer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <header class="page-hero">
+      <div class="hero__bg"><div class="hero__orb hero__orb--2"></div><div class="hero__grid"></div></div>
+      <div class="page-hero__inner container">
+        <div class="page-hero__icon"><i data-lucide="eye" width="40" height="40"></i></div>
+        <h1 class="page-hero__title">Observer layer</h1>
+        <p class="page-hero__desc">Cardinal produces a world. It also needs to be watchable. The observer layer doesn't affect the simulation. It watches it.</p>
+      </div>
+    </header>
+
+    <section class="story" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Observation modes</p>
+        <div class="card-grid reveal-group">
+          <article class="card">
+            <div class="card__icon"><i data-lucide="terminal" width="28" height="28"></i></div>
+            <h3 class="card__title">Raw log stream</h3>
+            <p class="card__text">Every tick, every agent, every action. For analysis.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="list" width="28" height="28"></i></div>
+            <h3 class="card__title">Event feed</h3>
+            <p class="card__text">Significant events only, in readable form. For monitoring.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="book-open" width="28" height="28"></i></div>
+            <h3 class="card__title">Chronicle summary</h3>
+            <p class="card__text">Compressed narrative from the chronicle tick. Readable as history.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="map" width="28" height="28"></i></div>
+            <h3 class="card__title">Spatial view</h3>
+            <p class="card__text">2D map render with agent positions, territories, resource overlays, event markers.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="search" width="28" height="28"></i></div>
+            <h3 class="card__title">Agent inspector</h3>
+            <p class="card__text">Full internal state, memory contents, relationship map, current need levels.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="network" width="28" height="28"></i></div>
+            <h3 class="card__title">Lineage graph</h3>
+            <p class="card__text">Generational tree. Trait drift visualization across generations.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="git-merge" width="28" height="28"></i></div>
+            <h3 class="card__title">Knowledge map</h3>
+            <p class="card__text">Track a knowledge item across agents and time. See it spread, mutate, or die.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story story--dim" data-reveal>
+      <div class="container container--narrow">
+        <blockquote class="story__quote">
+          Civilization without design. Culture without instruction. History without author. Meaning without assignment.
+        </blockquote>
+        <p class="story__body text-center">And seeing what survives anyway.</p>
+        <div class="hero__cta hero__cta--center mt-2">
+          <a href="/" class="btn btn--primary">Back to overview <i data-lucide="arrow-left" width="16" height="16"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div><div class="site-footer__brand">Cardinal</div><p class="site-footer__tagline">Experimental autonomous civilization simulation. Research archive.</p></div>
+      <div><h4>Core</h4><ul><li><a href="/philosophy.html">Philosophy</a></li><li><a href="/world.html">World</a></li><li><a href="/agents.html">Agents</a></li><li><a href="/memory.html">Memory &amp; language</a></li></ul></div>
+      <div><h4>Systems</h4><ul><li><a href="/generations.html">Generations</a></li><li><a href="/emergence.html">Emergence</a></li><li><a href="/simulation.html">Simulation loop</a></li><li><a href="/observer.html">Observer layer</a></li></ul></div>
+    </div>
+    <div class="site-footer__bottom container"><span>Cardinal research documentation</span><span class="site-footer__credit">made with <i data-lucide="heart" width="12" height="12" class="site-footer__heart" aria-hidden="true"></i> by <a href="https://renzoreyn.dev" target="_blank" rel="noopener noreferrer">@renzoreyn</a></span></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/context-menu.js"></script>
+  <script src="/assets/js/animations.js"></script>
+</body>
+</html>

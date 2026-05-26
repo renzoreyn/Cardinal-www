@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cardinal: an experimental autonomous civilization simulation. Research documentation." />
+  <title>Cardinal | Research</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="is-loading">
+  <div class="page-loader" aria-hidden="true">
+    <div class="page-loader__mark">Cardinal</div>
+    <div class="page-loader__bar"><span></span></div>
+    <p class="page-loader__hint">loading research archive</p>
+  </div>
+
+  <div class="nav-progress" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="site-nav__brand">
+        <span class="site-nav__brand-icon"><i data-lucide="flame" width="22" height="22"></i></span>
+        <span class="site-nav__brand-text">Cardinal</span>
+      </a>
+      <nav class="site-nav__desktop" aria-label="Main navigation">
+        <ul class="site-nav__links">
+          <li><a href="/" aria-current="page"><i data-lucide="home" width="14" height="14"></i> Overview</a></li>
+          <li><a href="/philosophy.html"><i data-lucide="compass" width="14" height="14"></i> Philosophy</a></li>
+          <li><a href="/world.html"><i data-lucide="globe" width="14" height="14"></i> World</a></li>
+          <li><a href="/agents.html"><i data-lucide="users" width="14" height="14"></i> Agents</a></li>
+          <li><a href="/memory.html"><i data-lucide="brain" width="14" height="14"></i> Memory</a></li>
+          <li><a href="/generations.html"><i data-lucide="git-branch" width="14" height="14"></i> Generations</a></li>
+          <li><a href="/emergence.html"><i data-lucide="sparkles" width="14" height="14"></i> Emergence</a></li>
+          <li><a href="/simulation.html"><i data-lucide="activity" width="14" height="14"></i> Simulation</a></li>
+          <li><a href="/observer.html"><i data-lucide="eye" width="14" height="14"></i> Observer</a></li>
+        </ul>
+      </nav>
+      <button class="site-nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="site-nav__toggle-icon site-nav__toggle-icon--open"><i data-lucide="menu" width="22" height="22"></i></span>
+        <span class="site-nav__toggle-icon site-nav__toggle-icon--close"><i data-lucide="x" width="22" height="22"></i></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true" inert>
+    <button type="button" class="mobile-nav__backdrop" tabindex="-1" aria-label="Close menu"></button>
+    <div class="mobile-nav__panel" role="dialog" aria-label="Navigation">
+      <div class="mobile-nav__head">
+        <span class="mobile-nav__title">Cardinal</span>
+        <button type="button" class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x" width="22" height="22"></i></button>
+      </div>
+      <ul class="mobile-nav__list">
+        <li><a href="/" aria-current="page"><span class="mobile-nav__icon"><i data-lucide="home" width="20" height="20"></i></span>Overview</a></li>
+        <li><a href="/philosophy.html"><span class="mobile-nav__icon"><i data-lucide="compass" width="20" height="20"></i></span>Philosophy</a></li>
+        <li><a href="/world.html"><span class="mobile-nav__icon"><i data-lucide="globe" width="20" height="20"></i></span>World</a></li>
+        <li><a href="/agents.html"><span class="mobile-nav__icon"><i data-lucide="users" width="20" height="20"></i></span>Agents</a></li>
+        <li><a href="/memory.html"><span class="mobile-nav__icon"><i data-lucide="brain" width="20" height="20"></i></span>Memory</a></li>
+        <li><a href="/generations.html"><span class="mobile-nav__icon"><i data-lucide="git-branch" width="20" height="20"></i></span>Generations</a></li>
+        <li><a href="/emergence.html"><span class="mobile-nav__icon"><i data-lucide="sparkles" width="20" height="20"></i></span>Emergence</a></li>
+        <li><a href="/simulation.html"><span class="mobile-nav__icon"><i data-lucide="activity" width="20" height="20"></i></span>Simulation</a></li>
+        <li><a href="/observer.html"><span class="mobile-nav__icon"><i data-lucide="eye" width="20" height="20"></i></span>Observer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="hero__orb hero__orb--1" data-parallax="0.08"></div>
+        <div class="hero__orb hero__orb--2" data-parallax="0.12"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="hero__content container">
+        <p class="hero__eyebrow">
+          <i data-lucide="microscope" width="16" height="16"></i>
+          Research documentation
+        </p>
+        <h1 class="hero__title">
+          What happens when you <em>don't</em> tell a system what civilization is?
+        </h1>
+        <p class="hero__lead">
+          Cardinal is an experimental autonomous civilization simulation focused on emergent behavior, generational learning, and socio-cultural formation in a closed multi-agent environment.
+        </p>
+        <div class="hero__cta">
+          <a href="/philosophy.html" class="btn btn--primary">
+            Enter the archive
+            <i data-lucide="arrow-right" width="16" height="16"></i>
+          </a>
+          <a href="/emergence.html" class="btn btn--ghost">
+            Emergence targets
+            <i data-lucide="chevron-right" width="16" height="16"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <section class="story" data-reveal>
+      <div class="container split">
+        <div>
+          <p class="story__chapter">Chapter I</p>
+          <h2 class="story__heading">A world without history</h2>
+          <div class="story__body">
+            <p>
+              It's a world where agents don't start with history, knowledge, or structure. Just survival pressure and time.
+            </p>
+            <p>
+              The question is simple: what happens when you don't tell a system what civilization is, and you just let it happen anyway?
+            </p>
+          </div>
+          <blockquote class="story__quote">
+            Nothing is handed to them. Not even meaning.
+          </blockquote>
+        </div>
+        <aside class="sticky-aside">
+          <div class="aside-panel reveal">
+            <h3>System built around</h3>
+            <ul>
+              <li>No initial memory</li>
+              <li>Minimal innate knowledge</li>
+              <li>Survival-driven utility</li>
+              <li>Learning, communication, reproduction</li>
+              <li>Adaptation over time</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="story story--dim" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Primary targets</p>
+        <h2 class="story__heading">What we watch for</h2>
+        <div class="card-grid reveal-group">
+          <article class="card">
+            <div class="card__icon"><i data-lucide="users-round" width="28" height="28"></i></div>
+            <h3 class="card__title">Stable societies</h3>
+            <p class="card__text">Emergence of groups that persist beyond individual survival loops.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="repeat" width="28" height="28"></i></div>
+            <h3 class="card__title">Cultural transmission</h3>
+            <p class="card__text">Knowledge and behavior carried across generations, always lossy, always shifting.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="message-circle" width="28" height="28"></i></div>
+            <h3 class="card__title">Language formation</h3>
+            <p class="card__text">Shared reference as the minimum viable unit of culture. Not NLP. Not grammar by design.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="landmark" width="28" height="28"></i></div>
+            <h3 class="card__title">Institutional behavior</h3>
+            <p class="card__text">Behaviors that didn't break across enough time to become load-bearing.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="trending-down" width="28" height="28"></i></div>
+            <h3 class="card__title">Collapse vs equilibrium</h3>
+            <p class="card__text">Extinction is always plausible. Never guaranteed. There's no win state.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="dna" width="28" height="28"></i></div>
+            <h3 class="card__title">Lineage drift</h3>
+            <p class="card__text">Genetic and cultural inheritance with mutation. Convergence is a failure mode worth studying.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story story--panel" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Inspiration</p>
+        <h2 class="story__heading">Standing on several fields</h2>
+        <ul class="pill-list reveal">
+          <li>Artificial life</li>
+          <li>Multi-agent reinforcement learning</li>
+          <li>Complex adaptive systems</li>
+          <li>Computational anthropology</li>
+          <li>Evolutionary simulation</li>
+        </ul>
+        <div class="metrics reveal-group">
+          <div class="metric">
+            <div class="metric__value">12–20</div>
+            <div class="metric__label">Default spawn count</div>
+          </div>
+          <div class="metric">
+            <div class="metric__value">1h</div>
+            <div class="metric__label">= 1 sim day</div>
+          </div>
+          <div class="metric">
+            <div class="metric__value">~1mo</div>
+            <div class="metric__label">= 1 sim year</div>
+          </div>
+          <div class="metric">
+            <div class="metric__value">0</div>
+            <div class="metric__label">Predefined governments</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" data-reveal>
+      <div class="container container--narrow">
+        <p class="story__chapter">Long-term vision</p>
+        <h2 class="story__heading">Watching structure appear</h2>
+        <div class="story__body">
+          <p>Cardinal is not about controlling outcomes. It's about watching structure appear where nothing structured was placed.</p>
+          <p><strong>Civilization without design.</strong> Culture without instruction. History without author. Meaning without assignment.</p>
+          <p>And seeing what survives anyway.</p>
+          <p>The interesting question isn't whether they build something. It's what they build <em>with</em> when the only material available is each other.</p>
+        </div>
+        <div class="hero__cta mt-2">
+          <a href="/philosophy.html" class="btn btn--primary">System philosophy <i data-lucide="arrow-right" width="16" height="16"></i></a>
+          <a href="/world.html" class="btn btn--ghost">World model <i data-lucide="arrow-right" width="16" height="16"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <div class="site-footer__brand">Cardinal</div>
+        <p class="site-footer__tagline">Experimental autonomous civilization simulation. Research archive.</p>
+      </div>
+      <div>
+        <h4>Core</h4>
+        <ul>
+          <li><a href="/philosophy.html">Philosophy</a></li>
+          <li><a href="/world.html">World</a></li>
+          <li><a href="/agents.html">Agents</a></li>
+          <li><a href="/memory.html">Memory &amp; language</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Systems</h4>
+        <ul>
+          <li><a href="/generations.html">Generations</a></li>
+          <li><a href="/emergence.html">Emergence</a></li>
+          <li><a href="/simulation.html">Simulation loop</a></li>
+          <li><a href="/observer.html">Observer layer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom container">
+      <span>Cardinal research documentation</span>
+      <span class="site-footer__credit">made with <i data-lucide="heart" width="12" height="12" class="site-footer__heart" aria-hidden="true"></i> by <a href="https://renzoreyn.dev" target="_blank" rel="noopener noreferrer">@renzoreyn</a></span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/context-menu.js"></script>
+  <script src="/assets/js/animations.js"></script>
+</body>
+</html>
