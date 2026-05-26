@@ -1,225 +1,62 @@
 # Cardinal
 
-Cardinal is an experimental autonomous civilization simulation focused on emergence, generational learning, and the formation of societies inside a closed multi-agent world.
+Cardinal is an autonomous civilization simulation.
 
-It explores a simple question:
+The world starts empty. No kingdoms, no factions, no language, no history. Just agents trying to survive.
 
-> what happens when intelligence is given survival pressure, memory, time, and each other — but no predefined civilization?
+They are not told:
+- what society is
+- how cooperation works
+- what leadership means
+- what language should look like
+- how civilization is supposed to form
 
-Agents begin with no culture, no language, no history, and no understanding of the world around them. They are not assigned roles, professions, governments, or goals beyond staying alive long enough to matter.
-
-From that foundation, Cardinal observes whether structure forms naturally:
-- settlements
-- social groups
-- rituals
-- leadership
-- trade
-- conflict
-- language
-- cultural identity
-- collapse
-
-Nothing is scripted.
-
-If civilization appears, it emerges from interaction, adaptation, and survival pressure over generations.
-
----
-
-## Core Philosophy
-
-Cardinal is designed around emergence rather than hardcoded systems.
-
-There are no predefined:
-- economies
-- morality systems
-- political structures
-- social hierarchies
-- quest systems
-- technology trees
-
-Agents are intentionally limited:
-- local perception only
-- imperfect memory
-- shallow decision-making
-- no global knowledge
-- no author-given meaning
-
-Complexity comes from scale and interaction, not individual intelligence.
-
-The goal is not to create “smart NPCs.”
-
-The goal is to create conditions where civilization becomes possible.
-
----
-
-## The World
-
-The simulation takes place in a persistent evolving environment containing:
-- forests
-- rivers
-- mountains
-- plains
-- caves
-- coastlines
-- hazardous regions
-
-The environment changes over time through:
-- resource depletion
-- seasonal cycles
-- migration pressure
-- environmental hazards
-- ecological collapse
-
-The world itself becomes part of the selection pressure.
-
-Scarcity matters.
-
-Isolation matters.
-
-Winter matters.
-
----
-
-## Agents
-
-Each agent operates as an autonomous system driven by:
+The simulation only provides pressure:
 - hunger
-- thirst
-- temperature
-- fatigue
+- weather
+- geography
 - fear
-- safety
-- social relationships
+- scarcity
+- memory
+- other agents
 
-Agents can:
-- explore
-- forage
-- hunt
-- build shelter
-- use fire
-- cooperate
-- fight
-- reproduce
-- communicate
-- teach
-- remember
+Everything else has to emerge on its own.
 
-Behavior is influenced by evolving tendencies such as:
-- curiosity
-- aggression
-- sociability
-- trust
-- loyalty
-- ambition
+Agents can explore, forage, build shelter, form relationships, reproduce, fight, teach, remember, and communicate through primitive signals.
 
-These traits are not static personalities. They drift over time through experience, adaptation, inheritance, and survival outcomes.
-
----
-
-## Memory & Knowledge
-
-Memory in Cardinal is imperfect.
-
-Agents forget, distort, reinforce, and reinterpret information over time.
-
-Knowledge behaves like a transferable artifact:
-- it spreads socially
-- mutates through transmission
-- decays if unused
-- stabilizes through repetition
-- becomes myth if meaning survives but understanding is lost
-
-This allows cultures to preserve, mutate, or lose survival knowledge across generations.
-
----
-
-## Language Emergence
-
-Agents do not start with language.
-
-Communication begins as primitive signaling and emotional broadcasting.
-
-Shared symbols emerge gradually through repeated interaction and reinforcement.
-
-Over generations:
-- tokens stabilize
-- meanings drift
-- dialects diverge
-- proto-language forms
-
-Language is not manually authored.
-
-It is treated as an emergent compression system for shared understanding.
-
----
-
-## Generational Simulation
-
-Agents age, reproduce, and die.<img width="24" height="24" alt="favicon" src="https://github.com/user-attachments/assets/f34f5c75-219f-4027-b2e5-6e43e37c4ce3" />
-
-
-Children inherit:
-- genetic tendencies
-- weak instinctive traces
-- environmental pressure
-- cultural exposure
-
-But they do not inherit direct memory.
-
-Each generation must rediscover, preserve, or lose what came before it.
-
-This creates long-term evolutionary and cultural dynamics where survival depends not only on biology, but on successful transmission of knowledge and behavior.
-
----
-
-## Emergent Structures
-
-Over time, persistent behaviors may solidify into:
+Over time, behaviors may stabilize into larger structures:
 - settlements
-- traditions
-- territorial behavior
-- leadership patterns
-- trade routes
+- trade
 - rituals
-- social norms
-- proto-institutions
+- territorial behavior
+- social hierarchy
+- proto-language
+- cultural identity
 
-These are not predefined gameplay systems.
+None of these systems are hardcoded.
 
-They are interpreted from repeated behavior over time.
+If they appear, they appear because the agents repeatedly reinforced them across generations.
 
-Cardinal treats civilization itself as an emergent phenomenon.
+Memory in Cardinal is imperfect. Agents forget things, distort experiences, pass knowledge incorrectly, and lose survival techniques over time. Culture is treated as something fragile rather than permanent.
 
----
+Language also begins from nothing. Agents start with primitive signaling only. Shared meaning forms gradually through repeated interaction and imitation.
 
-## Observer Layer
+The simulation focuses heavily on generational change.
 
-The simulation includes systems for observing and analyzing the evolving world through:
-- event streams
-- chronicle summaries
-- lineage tracking
-- spatial visualization
-- knowledge propagation maps
-- agent inspection tools
+Children inherit tendencies and environmental pressure, but not direct memory. Every generation depends on what the previous one successfully preserves.
 
-The observer does not control the world.
+The world itself changes too:
+- resources deplete
+- seasons shift
+- regions become dangerous
+- migration pressure forms naturally
 
-It watches it.
+Collapse is possible.
+Extinction is possible.
+Stagnation is possible.
 
----
+Those outcomes are part of the simulation, not failures of it.
 
-## Long-Term Vision
+Cardinal is less about controlling a world and more about observing one.
 
-Cardinal is an experiment in artificial emergence.
-
-Not a strategy game.
-Not a scripted simulation.
-Not a sandbox with predefined outcomes.
-
-It is an attempt to observe:
-- culture without instruction
-- history without authors
-- institutions without implementation
-- meaning without assignment
-
-and see what survives anyway.
+The goal is to see whether structure, culture, and history can emerge from survival pressure alone.
