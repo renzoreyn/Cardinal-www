@@ -3,28 +3,37 @@
     return li.classList.contains("done") || li.classList.contains("is-done");
   }
 
+  function setPhaseStatus(phase, status, text) {
+    if (!status) return;
+    status.classList.remove("phase__status--complete");
+    status.textContent = text;
+    if (text === "completed") {
+      status.classList.add("phase__status--complete");
+    }
+  }
+
   function updatePhaseStatus() {
     document.querySelectorAll(".phase").forEach((phase) => {
       const items = [...phase.querySelectorAll(".checklist li")];
       const status = phase.querySelector(".phase__status");
-      if (!status || !items.length) return;
+      if (!status) return;
 
       const doneCount = items.filter(isItemDone).length;
       const forcedComplete = phase.classList.contains("is-complete");
+      const allDone = items.length > 0 && doneCount === items.length;
 
-      status.classList.remove("phase__status--complete");
-
-      if (forcedComplete || doneCount === items.length) {
-        status.textContent = "complete";
-        status.classList.add("phase__status--complete");
-        if (doneCount === items.length && !forcedComplete) {
-          phase.classList.add("is-complete");
-        }
-      } else if (doneCount === 0) {
-        status.textContent = "not started";
-      } else {
-        status.textContent = doneCount + " / " + items.length;
+      if (forcedComplete || allDone) {
+        setPhaseStatus(phase, status, "completed");
+        if (allDone) phase.classList.add("is-complete");
+        return;
       }
+
+      if (doneCount === 0) {
+        setPhaseStatus(phase, status, "not started");
+        return;
+      }
+
+      setPhaseStatus(phase, status, doneCount + " / " + items.length);
     });
   }
 
@@ -32,6 +41,12 @@
     updatePhaseStatus();
   }
 
-  if (window.__cardinalLayoutReady) init();
-  else document.addEventListener("cardinal:layout-ready", init);
+  window.updateRoadmapPhases = updatePhaseStatus;
+
+  document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener("cardinal:layout-ready", init);
+
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    init();
+  }
 })();

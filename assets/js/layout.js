@@ -124,6 +124,10 @@
       window.initCardinalNav();
     }
 
+    if (typeof window.updateRoadmapPhases === "function") {
+      window.updateRoadmapPhases();
+    }
+
     if (typeof lucide !== "undefined") {
       lucide.createIcons();
     }

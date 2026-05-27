@@ -1,62 +1,70 @@
-# Cardinal
+# Cardinal Research Docs
 
-Cardinal is an autonomous civilization simulation.
+Static research documentation site for the Cardinal project. Built for Cloudflare Pages.
 
-The world starts empty. No kingdoms, no factions, no language, no history. Just agents trying to survive.
+## Local preview
 
-They are not told:
-- what society is
-- how cooperation works
-- what leadership means
-- what language should look like
-- how civilization is supposed to form
+```bash
+npx serve .
+```
 
-The simulation only provides pressure:
-- hunger
-- weather
-- geography
-- fear
-- scarcity
-- memory
-- other agents
+Or with Python:
 
-Everything else has to emerge on its own.
+```bash
+python -m http.server 8080
+```
 
-Agents can explore, forage, build shelter, form relationships, reproduce, fight, teach, remember, and communicate through primitive signals.
+Open `http://localhost:8080`.
 
-Over time, behaviors may stabilize into larger structures:
-- settlements
-- trade
-- rituals
-- territorial behavior
-- social hierarchy
-- proto-language
-- cultural identity
+## Deploy to Cloudflare Pages
 
-None of these systems are hardcoded.
+### Dashboard
 
-If they appear, they appear because the agents repeatedly reinforced them across generations.
+1. Push this folder to a Git repository.
+2. In Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git.
+3. Build settings:
+   - **Framework preset:** None
+   - **Build command:** (leave empty)
+   - **Build output directory:** `/` (root)
 
-Memory in Cardinal is imperfect. Agents forget things, distort experiences, pass knowledge incorrectly, and lose survival techniques over time. Culture is treated as something fragile rather than permanent.
+### Wrangler CLI
 
-Language also begins from nothing. Agents start with primitive signaling only. Shared meaning forms gradually through repeated interaction and imitation.
+```bash
+npm install -g wrangler
+wrangler pages deploy . --project-name=cardinal-docs
+```
 
-The simulation focuses heavily on generational change.
+## Structure
 
-Children inherit tendencies and environmental pressure, but not direct memory. Every generation depends on what the previous one successfully preserves.
+| Path | Content |
+|------|---------|
+| `/` | Overview |
+| `/terminology.html` | Lexicon (Cardinal, Scintilla, Substrate, Continuity, Administrator) |
+| `/roadmap.html` | MVP Roadmap (phases and deferred work) |
+| `/philosophy.html` | System philosophy |
+| `/world.html` | Inside Cardinal |
+| `/agents.html` | Scintillae |
+| `/memory.html` | Continuity & communication |
+| `/generations.html` | Generations & inheritance |
+| `/emergence.html` | Emergence targets |
+| `/simulation.html` | Substrate loop & events |
+| `/observer.html` | Observer layer (Administrator view) |
 
-The world itself changes too:
-- resources deplete
-- seasons shift
-- regions become dangerous
-- migration pressure forms naturally
+## Shared layout
 
-Collapse is possible.
-Extinction is possible.
-Stagnation is possible.
+Every page uses `#site-header` and `#site-footer` placeholders. `assets/js/layout.js` injects the navbar and footer on load.
 
-Those outcomes are part of the simulation, not failures of it.
+**Edit navigation in one place:** `assets/js/nav-config.js`
 
-Cardinal is less about controlling a world and more about observing one.
+- `CARDINAL_NAV` — desktop + mobile nav links (and right-click context menu). Uses project lexicon labels (Scintillae, Continuity, Substrate, etc.).
+- `CARDINAL_FOOTER_LINKS` — footer columns
 
-The goal is to see whether structure, culture, and history can emerge from survival pressure alone.
+Set `data-page` on `<body>` (for example `data-page="/agents.html"`) so the active link gets `aria-current="page"`.
+
+Preview with a local server (`npx serve .`). Opening HTML files directly (`file://`) will not run the layout scripts correctly.
+
+## Stack
+
+- Plain HTML/CSS/JS (no build step)
+- [GSAP](https://gsap.com/) + ScrollTrigger for animations
+- [Lucide](https://lucide.dev/) icons
