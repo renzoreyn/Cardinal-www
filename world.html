@@ -34,8 +34,12 @@
         <p class="story__chapter">Environment</p>
         <h2 class="story__heading">Persistent space inside Cardinal</h2>
         <div class="story__body">
-          <p>Starts small: bounded 2D grid or navmesh, valley-scale region (~2km x 2km).</p>
-          <p>Scales over time to ~10km x 10km continent. Expansion is gated by Scintilla population density and exploration behavior. Cardinal doesn't grow until something pushes into it.</p>
+          <p>MVP runs on a 200×200 grid in memory (<code>Float32Array</code>, four channels), roughly 2km². Nothing is handed in at spawn.</p>
+          <p>Post-MVP, Cardinal can scale toward a ~10km continent. Expansion stays gated by Scintilla population density and exploration. Cardinal doesn't grow until something pushes into it.</p>
+        </div>
+        <div class="metrics metrics--roadmap reveal-group">
+          <div class="metric"><div class="metric__value">200²</div><div class="metric__label">Grid cells (~2km²)</div></div>
+          <div class="metric"><div class="metric__value">0</div><div class="metric__label">Starting knowledge</div></div>
         </div>
         <ul class="pill-list reveal">
           <li>Forests</li><li>Rivers</li><li>Mountains</li><li>Plains</li><li>Caves</li><li>Coastlines</li><li>Dangerous zones</li>
@@ -47,11 +51,16 @@
       <div class="container">
         <p class="story__chapter">Environment fields</p>
         <h2 class="story__heading">Time-dependent pressure</h2>
-        <div class="card-grid reveal-group">
-          <article class="card"><div class="card__icon"><i data-lucide="wheat" width="28" height="28"></i></div><h3 class="card__title">R(x, y, t)</h3><p class="card__text">Resource density. Regenerates slowly. Depletes under sustained use.</p></article>
-          <article class="card"><div class="card__icon"><i data-lucide="thermometer" width="28" height="28"></i></div><h3 class="card__title">T(x, y, t)</h3><p class="card__text">Temperature. Varies by season cycle. Cold stress, heat stress.</p></article>
-          <article class="card"><div class="card__icon"><i data-lucide="footprints" width="28" height="28"></i></div><h3 class="card__title">C(x, y)</h3><p class="card__text">Traversal cost across the terrain mesh.</p></article>
-          <article class="card"><div class="card__icon"><i data-lucide="skull" width="28" height="28"></i></div><h3 class="card__title">H(x, y, t)</h3><p class="card__text">Hazard probability. Static environments don't create pressure.</p></article>
+        <div class="data-table-wrap reveal">
+          <table class="data-table">
+            <thead><tr><th>Field</th><th>Description</th><th>Behaviour</th></tr></thead>
+            <tbody>
+              <tr><td>R(x,y,t)</td><td>Resource density</td><td>Regenerates slowly. Depletes under sustained use.</td></tr>
+              <tr><td>T(x,y,t)</td><td>Temperature</td><td>Varies by season. Causes cold and heat stress.</td></tr>
+              <tr><td>C(x,y)</td><td>Traversal cost</td><td>Static per terrain type.</td></tr>
+              <tr><td>H(x,y,t)</td><td>Hazard probability</td><td>Accumulates from events.</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -61,8 +70,11 @@
         <div>
           <p class="story__chapter">Seasonal cycle</p>
           <h2 class="story__heading">They just notice food gets harder</h2>
-          <div class="code-block reveal">1 real hour  = 1 simulated day
-1 real month = ~1 simulated year (4 seasons)</div>
+          <div class="metrics metrics--roadmap reveal-group">
+            <div class="metric"><div class="metric__value">1h</div><div class="metric__label">= 1 sim day</div></div>
+            <div class="metric"><div class="metric__value">~1mo</div><div class="metric__label">= 1 sim year</div></div>
+            <div class="metric"><div class="metric__value">4</div><div class="metric__label">Seasons per year</div></div>
+          </div>
           <div class="story__body">
             <p>Scintillae don't know what seasons are. They just notice that food gets harder to find, and it gets cold, and some of them don't survive it.</p>
             <p><strong>That's the point.</strong></p>
@@ -83,6 +95,24 @@
     </section>
 
     <section class="story" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Entities</p>
+        <h2 class="story__heading">Discovered, not given</h2>
+        <div class="story__body">
+          <p>Prey, apex predators, flora, water, caves, and rock deposits. None of it is known at spawn. Knowledge dies with the carrier if untransmitted.</p>
+        </div>
+        <div class="card-grid reveal-group">
+          <article class="card"><div class="card__icon"><i data-lucide="rabbit" width="28" height="28"></i></div><h3 class="card__title">Small prey</h3><p class="card__text">Low risk. 0.3 hunger yield. Respawns every 5 sim days.</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="beef" width="28" height="28"></i></div><h3 class="card__title">Large prey</h3><p class="card__text">High risk. 0.8 hunger yield. Respawns every 15 sim days.</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="skull" width="28" height="28"></i></div><h3 class="card__title">Apex</h3><p class="card__text">Lethal. Patrols a radius, attacks on proximity. Respawns every 30 sim days.</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="flower-2" width="28" height="28"></i></div><h3 class="card__title">Flora</h3><p class="card__text">Berry bush, fruit tree, hardwood, reed. Seasonal availability. Some finite.</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="droplets" width="28" height="28"></i></div><h3 class="card__title">Water source</h3><p class="card__text">Infinite. Detectable from 8 cells. First Scintilla to find it has a survival edge.</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="mountain" width="28" height="28"></i></div><h3 class="card__title">Terrain objects</h3><p class="card__text">Cave (natural shelter), rock deposit (finite, never respawns). Scarcity drives migration.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story story--dim" data-reveal>
       <div class="container">
         <p class="story__chapter">Degenerate states in Cardinal</p>
         <h2 class="story__heading">Failure modes worth tracking</h2>
@@ -105,6 +135,7 @@
         </div>
         <div class="hero__cta mt-2">
           <a href="/agents.html" class="btn btn--primary">Scintillae <i data-lucide="arrow-right" width="16" height="16"></i></a>
+          <a href="/emergence.html" class="btn btn--ghost">Emergence <i data-lucide="arrow-right" width="16" height="16"></i></a>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 window.CARDINAL_NAV = [
   { href: "/", label: "Overview", icon: "home" },
   { href: "/terminology.html", label: "Lexicon", icon: "book-marked" },
+  { href: "/roadmap.html", label: "Roadmap", icon: "map" },
   { href: "/philosophy.html", label: "Philosophy", icon: "compass" },
   { href: "/world.html", label: "Cardinal", icon: "globe" },
   { href: "/agents.html", label: "Scintillae", icon: "users" },
@@ -15,6 +16,7 @@ window.CARDINAL_NAV = [
 window.CARDINAL_FOOTER_LINKS = {
   core: [
     { href: "/terminology.html", label: "Lexicon" },
+    { href: "/roadmap.html", label: "MVP Roadmap" },
     { href: "/philosophy.html", label: "Philosophy" },
     { href: "/world.html", label: "Cardinal" },
     { href: "/agents.html", label: "Scintillae" },

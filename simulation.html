@@ -43,9 +43,63 @@
           <div class="tick-item reveal">
             <p class="tick-item__label">Chronicle tick</p>
             <h3 class="tick-item__title">Every simulated day</h3>
-            <p class="tick-item__desc">Event aggregation and tagging. Continuity decay application. History compression. Long-term pattern detection. Cultural marker evaluation.</p>
+            <p class="tick-item__desc">Event aggregation and tagging. Continuity decay application. History compression. Cultural marker evaluation. Groq narration. SQLite flush.</p>
           </div>
         </div>
+        <blockquote class="story__quote">95% pure heuristic JS. Groq only for chronicle narration, Continuity distillation, and communication utterances, through <code>groq/client.js</code> only.</blockquote>
+      </div>
+    </section>
+
+    <section class="story story--dim" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Implementation</p>
+        <h2 class="story__heading">What the Substrate runs on</h2>
+        <div class="stack-grid reveal">
+          <div class="stack-item"><span class="stack-layer">Engine</span><span class="stack-value">Node.js</span></div>
+          <div class="stack-item"><span class="stack-layer">Persistence</span><span class="stack-value">SQLite / better-sqlite3</span></div>
+          <div class="stack-item"><span class="stack-layer">LLM</span><span class="stack-value">Groq free tier / llama3-8b</span></div>
+          <div class="stack-item"><span class="stack-layer">World grid</span><span class="stack-value">Float32Array, in-memory</span></div>
+          <div class="stack-item"><span class="stack-layer">Deploy</span><span class="stack-value">Railway, private repo</span></div>
+          <div class="stack-item"><span class="stack-layer">Observer</span><span class="stack-value">Express + HTML/CSS/JS</span></div>
+        </div>
+        <p class="story__body">Build order and phase checklists are on the <a href="/roadmap.html">MVP Roadmap</a>.</p>
+      </div>
+    </section>
+
+    <section class="story" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Structure</p>
+        <h2 class="story__heading">Project layout</h2>
+        <pre class="code-block reveal">cardinal/
+├── world/
+│   ├── grid.js           # Float32Array world, R/T/C/H channels
+│   ├── seasons.js        # season cycle, field mutations per tick
+│   └── entities.js       # entity spawning, state, respawn, predator behavior
+├── scintillae/
+│   ├── scintilla.js      # Scintilla state, needs decay, aging
+│   ├── perception.js     # local radius, entity detection, fog of war
+│   ├── policy.js         # heuristic action selection
+│   └── tendencies.js     # weight shifts from experience
+├── continuity/
+│   ├── memory.js         # episodic / semantic / procedural / social
+│   ├── decay.js          # Continuity decay and reinforcement
+│   └── knowledge.js      # knowledge artifact lifecycle
+├── communication/
+│   ├── signals.js        # primitive signal tokens
+│   └── language.js       # co-occurrence → stabilization → spread
+├── substrate/
+│   ├── micro.js          # micro tick loop
+│   ├── cognitive.js      # cognitive tick loop
+│   └── chronicle.js      # chronicle tick, flush, Groq narration
+├── db/
+│   ├── schema.js         # SQLite schema init
+│   └── flush.js          # Cardinal + Scintilla serialization
+├── observer/
+│   └── events.js         # immutable event log, EventEmitter
+├── groq/
+│   └── client.js         # all Groq calls in one place
+├── config.js             # all tunable parameters
+└── index.js              # entry point, boot sequence</pre>
       </div>
     </section>
 

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cardinal MVP Roadmap: build phases and what waits until the survival loop is stable." />
+  <title>MVP Roadmap | Cardinal</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="is-loading" data-page="/roadmap.html">
+  <div class="page-loader" aria-hidden="true"><div class="page-loader__mark">Cardinal</div><div class="page-loader__bar"><span></span></div><p class="page-loader__hint">loading research archive</p></div>
+
+  <div id="site-header"></div>
+
+  <main>
+    <header class="page-hero">
+      <div class="hero__bg"><div class="hero__orb hero__orb--1"></div><div class="hero__orb hero__orb--2"></div><div class="hero__grid"></div></div>
+      <div class="page-hero__inner container">
+        <div class="page-hero__icon"><i data-lucide="map" width="40" height="40"></i></div>
+        <h1 class="page-hero__title">MVP Roadmap</h1>
+        <p class="page-hero__desc">Build order from nothing to a stable survival loop. Design and specs live on the other archive pages; this page tracks phases only.</p>
+      </div>
+    </header>
+
+    <section class="story" data-reveal>
+      <div class="container container--narrow">
+        <p class="story__chapter">Where to read</p>
+        <ul class="pill-list reveal">
+          <li><a href="/world.html">Inside Cardinal</a></li>
+          <li><a href="/agents.html">Scintillae</a></li>
+          <li><a href="/simulation.html">Substrate</a></li>
+          <li><a href="/memory.html">Continuity</a></li>
+          <li><a href="/generations.html">Generations</a></li>
+          <li><a href="/observer.html">Observer</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="story story--panel" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Phases</p>
+        <h2 class="story__heading">MVP build order</h2>
+        <div class="story__body">
+          <p>Everything after Phase 8 waits until the survival loop is stable.</p>
+        </div>
+
+        <div class="phase reveal" data-phase="01">
+          <div class="phase__header">
+            <span class="phase__num">Phase 01</span>
+            <span class="phase__title">Foundation</span>
+            <span class="phase__status">not started</span>
+          </div>
+          <ul class="checklist">
+            <li class="is-done"><span class="check-box"></span><span>Project scaffold, folder structure, config.js</span></li>
+            <li class="is-done"><span class="check-box"></span><span>SQLite schema init, basic flush</span></li>
+            <li class="is-done"><span class="check-box"></span><span>World grid init (Float32Array, 200×200, 4 channels)</span></li>
+            <li class="is-done"><span class="check-box"></span><span>Entity spawning (flora, fauna, terrain)</span></li>
+            <li class="is-done"><span class="check-box"></span><span>Season cycle</span></li>
+          </ul>
+        </div>
+
+        <div class="phase reveal" data-phase="02">
+          <div class="phase__header">
+            <span class="phase__num">Phase 02</span>
+            <span class="phase__title">Scintillae</span>
+            <span class="phase__status">not started</span>
+          </div>
+          <ul class="checklist">
+            <li><span class="check-box"></span><span>Scintilla spawn, state, needs decay</span></li>
+            <li><span class="check-box"></span><span>Aging and life stages</span></li>
+            <li><span class="check-box"></span><span>Death (all four causes)</span></li>
+            <li><span class="check-box"></span><span>Basic perception (local radius, entity detection, fog of war)</span></li>
+            <li><span class="check-box"></span><span>Heuristic policy (action selection by need urgency)</span></li>
+          </ul>
+        </div>
+
+        <div class="phase reveal" data-phase="03">
+          <div class="phase__header">
+            <span class="phase__num">Phase 03</span>
+            <span class="phase__title">Substrate</span>
+            <span class="phase__status">not started</span>
+          </div>
+          <ul class="checklist">
+            <li><span class="check-box"></span><span>Micro tick loop</span></li>
+            <li><span class="check-box"></span><span>Cognitive tick loop</span></li>
+            <li><span class="check-box"></span><span>Chronicle tick loop</span></li>
+            <li><span class="check-box"></span><span>Immutable event log via EventEmitter</span></li>
+            <li><span class="check-box"></span><span>SIGINT handler, flush on shutdown</span></li>
+          </ul>
+        </div>
+
+        <div class="phase reveal" data-phase="04">
+          <div class="phase__header">
+            <span class="phase__num">Phase 04</span>
+            <span class="phase__title">Continuity</span>
+            <span class="phase__status">not started</span>
+          </div>
+          <ul class="checklist">
+            <li><span class="check-box"></span><span>Continuity layers (episodic / semantic / procedural / social)</span></li>
+            <li><span class="check-box"></span><span>Decay and reinforcement</span></li>
+            <li><span class="check-box"></span><span>Knowledge artifact lifecycle (spread / mutate / decay / myth)</span></li>
+            <li><span class="check-box"></span><span>Fog of war (explored set, confidence decay, location sharing)</span></li>
+          </ul>
+        </div>
+
+        <div class="phase reveal" data-phase="05">
+          <div class="phase__header">
+            <span class="phase__num">Phase 05</span>
+            <span class="phase__title">Social</span>
+            <span class="phase__status">not started</span>
+          </div>
+          <ul class="checklist">
+            <li><span class="check-box"></span><span>Primitive signals (approach / flee / follow / threat)</span></li>
+            <li><span class="check-box"></span><span>Trust and relationship tracking</span></li>
+            <li><span class="check-box"></span><span>Group formation detection and DB write</span></li>
+            <li><span class="check-box"></span><span>Reproduction and gestation</span></li>
+            <li><span class="check-box"></span><span>Genetic inheritance with mutation</span></li>
+          </ul>
+        </div>
+
+        <div class="phase reveal" data-phase="06">
+          <div class="phase__header">
+            <span class="phase__num">Phase 06</span>
+            <span class="phase__title">Groq integration</span>
+            <span class="phase__status">not started</span>
+          </div>
+          <ul class="checklist">
+            <li><span class="check-box"></span><span>Chronicle narration (per cluster + global)</span></li>
+            <li><span class="check-box"></span><span>Continuity distillation (episodic → semantic)</span></li>
+            <li><span class="check-box"></span><span>Communication utterances</span></li>
+            <li><span class="check-box"></span><span>Groq client, rate limit handling</span></li>
+          </ul>
+        </div>
+
+        <div class="phase reveal" data-phase="07">
+          <div class="phase__header">
+            <span class="phase__num">Phase 07</span>
+            <span class="phase__title">Observer dashboard</span>
+            <span class="phase__status">not started</span>
+          </div>
+          <ul class="checklist">
+            <li><span class="check-box"></span><span>Express server with basic auth</span></li>
+            <li><span class="check-box"></span><span>Event feed (live, readable)</span></li>
+            <li><span class="check-box"></span><span>Chronicle summary view</span></li>
+            <li><span class="check-box"></span><span>Basic 2D spatial view (positions, resource overlay)</span></li>
+            <li><span class="check-box"></span><span>Scintilla inspector</span></li>
+            <li><span class="check-box"></span><span>Backup / restore / reset buttons</span></li>
+          </ul>
+        </div>
+
+        <div class="phase reveal" data-phase="08">
+          <div class="phase__header">
+            <span class="phase__num">Phase 08</span>
+            <span class="phase__title">Hardening</span>
+            <span class="phase__status">not started</span>
+          </div>
+          <ul class="checklist">
+            <li><span class="check-box"></span><span>Error handling and clean shutdown</span></li>
+            <li><span class="check-box"></span><span>Railway deploy, env vars, persistent volume</span></li>
+            <li><span class="check-box"></span><span>Smoke test full loop (spawn → survive → die → chronicle)</span></li>
+            <li><span class="check-box"></span><span>Tune config values from first runs</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" data-reveal>
+      <div class="container container--narrow">
+        <p class="story__chapter">Post-MVP</p>
+        <h2 class="story__heading">Deferred until Phase 8 is stable</h2>
+        <ul class="post-list reveal">
+          <li>Language emergence and token stabilization</li>
+          <li>Naming system activation</li>
+          <li>Generational cultural inheritance</li>
+          <li>Institutional behavior (settlements, leadership, norms, trade routes, rituals)</li>
+          <li>Cardinal map expansion (gated by population density)</li>
+          <li>Learned policy layer via RL / imitation for later generations</li>
+        </ul>
+        <div class="hero__cta mt-2">
+          <a href="/emergence.html" class="btn btn--primary">Emergence targets <i data-lucide="arrow-right" width="16" height="16"></i></a>
+          <a href="/" class="btn btn--ghost">Overview <i data-lucide="arrow-right" width="16" height="16"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="/assets/js/nav-config.js"></script>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/context-menu.js"></script>
+  <script src="/assets/js/animations.js"></script>
+  <script src="/assets/js/roadmap.js"></script>
+</body>
+</html>

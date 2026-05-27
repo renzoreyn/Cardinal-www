@@ -30,12 +30,12 @@
         <p class="story__chapter">Life stages</p>
         <div class="data-table-wrap reveal">
           <table class="data-table">
-            <thead><tr><th>Stage</th><th>Learning</th><th>Survival</th><th>Continuity</th><th>Reproduction</th></tr></thead>
+            <thead><tr><th>Stage</th><th>Age</th><th>Learning</th><th>Survival</th><th>Continuity</th><th>Reproduction</th></tr></thead>
             <tbody>
-              <tr><td>Child</td><td>Very high</td><td>Very low</td><td>Low</td><td>No</td></tr>
-              <tr><td>Adolescent</td><td>High</td><td>Moderate</td><td>Moderate</td><td>Rare</td></tr>
-              <tr><td>Adult</td><td>Moderate</td><td>High</td><td>High</td><td>Yes</td></tr>
-              <tr><td>Elder</td><td>Low</td><td>Declining</td><td>Very high</td><td>No</td></tr>
+              <tr><td>Child</td><td>0–5 yr</td><td>Very high</td><td>Very low</td><td>Low</td><td>No</td></tr>
+              <tr><td>Adolescent</td><td>5–15 yr</td><td>High</td><td>Moderate</td><td>Moderate</td><td>Rare</td></tr>
+              <tr><td>Adult</td><td>15–45 yr</td><td>Moderate</td><td>High</td><td>High</td><td>Yes</td></tr>
+              <tr><td>Elder</td><td>45+ yr</td><td>Low</td><td>Declining</td><td>Very high</td><td>No</td></tr>
             </tbody>
           </table>
         </div>
@@ -49,7 +49,8 @@
           <p class="story__chapter">Reproduction</p>
           <h2 class="story__heading">Under conditions, not command</h2>
           <div class="story__body">
-            <p>Minimum trust threshold. Adequate resource surplus. Shelter present. Safety threshold met. Social bonding duration. Scintillae can't reproduce on first contact.</p>
+            <p>Conditions-based, not scheduled. Trust threshold, resource surplus, shelter, safety, and bonding duration all required. Scintillae can't reproduce on first contact.</p>
+            <p>Gestation is 9 simulated days. Mother needs decay faster. Pregnancy can fail. Infant mortality is 15% in the first 2 simulated days. Always one offspring.</p>
             <p>Cardinal doesn't go easier on children. That's intentional.</p>
           </div>
           <div class="code-block reveal">trait_child = weighted_avg(trait_parent_a, trait_parent_b) + mutation_noise</div>
@@ -70,8 +71,27 @@
 
     <section class="story" data-reveal>
       <div class="container">
+        <p class="story__chapter">Death</p>
+        <h2 class="story__heading">Four causes</h2>
+        <div class="data-table-wrap reveal">
+          <table class="data-table">
+            <thead><tr><th>Cause</th><th>Condition</th></tr></thead>
+            <tbody>
+              <tr><td>Starvation / dehydration / cold / injury</td><td>Health reaches 0</td></tr>
+              <tr><td>Old age</td><td>Lifespan reached (45–75 sim years)</td></tr>
+              <tr><td>Infant mortality</td><td>First 2 sim days, 15% chance</td></tr>
+              <tr><td>Conflict</td><td>Lethal resolution</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="story story--dim" data-reveal>
+      <div class="container">
         <p class="story__chapter">Institutional inheritance</p>
         <h2 class="story__heading">Behaviors that didn't break</h2>
+        <p class="story__body"><strong>Post-MVP.</strong> Institutional inheritance is deferred until Phase 8 is stable. Listed on <a href="/emergence.html">Emergence</a> and the <a href="/roadmap.html">MVP Roadmap</a>.</p>
         <div class="card-grid reveal-group">
           <article class="card"><div class="card__icon"><i data-lucide="home" width="28" height="28"></i></div><h3 class="card__title">Settlements</h3><p class="card__text">Repeated return to a location. It becomes home.</p></article>
           <article class="card"><div class="card__icon"><i data-lucide="crown" width="28" height="28"></i></div><h3 class="card__title">Leadership</h3><p class="card__text">High trust + resource success. Proto-authority.</p></article>
