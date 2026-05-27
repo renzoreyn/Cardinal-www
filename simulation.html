@@ -54,52 +54,25 @@
       <div class="container">
         <p class="story__chapter">Implementation</p>
         <h2 class="story__heading">What the Substrate runs on</h2>
-        <div class="stack-grid reveal">
-          <div class="stack-item"><span class="stack-layer">Engine</span><span class="stack-value">Node.js</span></div>
-          <div class="stack-item"><span class="stack-layer">Persistence</span><span class="stack-value">SQLite / better-sqlite3</span></div>
-          <div class="stack-item"><span class="stack-layer">LLM</span><span class="stack-value">Groq free tier / llama3-8b</span></div>
-          <div class="stack-item"><span class="stack-layer">World grid</span><span class="stack-value">Float32Array, in-memory</span></div>
-          <div class="stack-item"><span class="stack-layer">Deploy</span><span class="stack-value">Railway, private repo</span></div>
-          <div class="stack-item"><span class="stack-layer">Observer</span><span class="stack-value">Express + HTML/CSS/JS</span></div>
+        <div class="card-grid reveal-group">
+          <article class="card"><div class="card__icon"><i data-lucide="server" width="28" height="28"></i></div><h3 class="card__title">Engine</h3><p class="card__text">Node.js</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="database" width="28" height="28"></i></div><h3 class="card__title">Persistence</h3><p class="card__text">SQLite / better-sqlite3</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="brain" width="28" height="28"></i></div><h3 class="card__title">LLM</h3><p class="card__text">Groq free tier / llama3-8b</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="grid-3x3" width="28" height="28"></i></div><h3 class="card__title">World grid</h3><p class="card__text">Float32Array, in-memory</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="cloud" width="28" height="28"></i></div><h3 class="card__title">Deploy</h3><p class="card__text">Railway, private repo</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="monitor" width="28" height="28"></i></div><h3 class="card__title">Observer</h3><p class="card__text">Express + HTML/CSS/JS</p></article>
         </div>
-        <p class="story__body">Build order and phase checklists are on the <a href="/roadmap.html">MVP Roadmap</a>.</p>
-      </div>
-    </section>
-
-    <section class="story" data-reveal>
-      <div class="container">
-        <p class="story__chapter">Structure</p>
-        <h2 class="story__heading">Project layout</h2>
         <pre class="code-block reveal">cardinal/
-├── world/
-│   ├── grid.js           # Float32Array world, R/T/C/H channels
-│   ├── seasons.js        # season cycle, field mutations per tick
-│   └── entities.js       # entity spawning, state, respawn, predator behavior
-├── scintillae/
-│   ├── scintilla.js      # Scintilla state, needs decay, aging
-│   ├── perception.js     # local radius, entity detection, fog of war
-│   ├── policy.js         # heuristic action selection
-│   └── tendencies.js     # weight shifts from experience
-├── continuity/
-│   ├── memory.js         # episodic / semantic / procedural / social
-│   ├── decay.js          # Continuity decay and reinforcement
-│   └── knowledge.js      # knowledge artifact lifecycle
-├── communication/
-│   ├── signals.js        # primitive signal tokens
-│   └── language.js       # co-occurrence → stabilization → spread
-├── substrate/
-│   ├── micro.js          # micro tick loop
-│   ├── cognitive.js      # cognitive tick loop
-│   └── chronicle.js      # chronicle tick, flush, Groq narration
-├── db/
-│   ├── schema.js         # SQLite schema init
-│   └── flush.js          # Cardinal + Scintilla serialization
-├── observer/
-│   └── events.js         # immutable event log, EventEmitter
-├── groq/
-│   └── client.js         # all Groq calls in one place
-├── config.js             # all tunable parameters
-└── index.js              # entry point, boot sequence</pre>
+├── world/          # grid, seasons, entities
+├── scintillae/     # state, perception, policy
+├── continuity/     # layers, decay, knowledge
+├── communication/  # signals, language
+├── substrate/      # micro, cognitive, chronicle ticks
+├── db/             # schema, flush
+├── observer/       # immutable event log
+├── groq/           # all Groq calls
+├── config.js
+└── index.js</pre>
       </div>
     </section>
 

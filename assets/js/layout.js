@@ -17,7 +17,7 @@
 
   function markCurrentPage() {
     const current = getCurrentPath();
-    document.querySelectorAll(".site-nav__links a, .mobile-nav__list a").forEach((link) => {
+    document.querySelectorAll(".site-nav__submenu a, .mobile-nav__list a").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === current) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
@@ -29,7 +29,7 @@
     const desktopLinks = nav
       .map(
         (item) =>
-          `<li><a href="${item.href}"><i data-lucide="${item.icon}" width="14" height="14"></i> ${esc(item.label)}</a></li>`
+          `<li><a href="${item.href}"><span class="site-nav__submenu-icon"><i data-lucide="${item.icon}" width="14" height="14"></i></span><span>${esc(item.label)}</span></a></li>`
       )
       .join("");
     const mobileLinks = nav
@@ -51,7 +51,13 @@
       <span class="site-nav__brand-text">Cardinal</span>
     </a>
     <nav class="site-nav__desktop" aria-label="Main navigation">
-      <ul class="site-nav__links">${desktopLinks}</ul>
+      <details class="site-nav__menu">
+        <summary class="site-nav__menu-trigger">
+          <span class="site-nav__menu-trigger-label"><i data-lucide="menu" width="14" height="14"></i> Nav</span>
+          <i data-lucide="chevron-down" width="14" height="14" class="site-nav__menu-chevron" aria-hidden="true"></i>
+        </summary>
+        <ul class="site-nav__submenu">${desktopLinks}</ul>
+      </details>
     </nav>
     <button class="site-nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
       <span class="site-nav__toggle-icon site-nav__toggle-icon--open"><i data-lucide="menu" width="22" height="22"></i></span>

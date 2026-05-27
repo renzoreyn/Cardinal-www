@@ -94,6 +94,26 @@
       );
     }
 
+    const desktopMenu = document.querySelector(".site-nav__menu");
+    if (desktopMenu && desktopMenu.dataset.bound !== "true") {
+      desktopMenu.dataset.bound = "true";
+
+      document.addEventListener("click", (e) => {
+        if (!desktopMenu.open) return;
+        if (!desktopMenu.contains(e.target)) desktopMenu.open = false;
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && desktopMenu.open) desktopMenu.open = false;
+      });
+
+      desktopMenu.querySelectorAll(".site-nav__submenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          desktopMenu.open = false;
+        });
+      });
+    }
+
     if (!document.body.dataset.cursorBound && document.querySelector(".cursor-glow")) {
       document.body.dataset.cursorBound = "true";
       const glow = document.querySelector(".cursor-glow");

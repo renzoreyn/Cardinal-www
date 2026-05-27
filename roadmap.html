@@ -16,57 +16,46 @@
 
   <div id="site-header"></div>
 
-  <main>
+  <main class="roadmap-page">
     <header class="page-hero">
       <div class="hero__bg"><div class="hero__orb hero__orb--1"></div><div class="hero__orb hero__orb--2"></div><div class="hero__grid"></div></div>
       <div class="page-hero__inner container">
         <div class="page-hero__icon"><i data-lucide="map" width="40" height="40"></i></div>
-        <h1 class="page-hero__title">MVP Roadmap</h1>
-        <p class="page-hero__desc">Build order from nothing to a stable survival loop. Design and specs live on the other archive pages; this page tracks phases only.</p>
+        <h1 class="page-hero__title">MVP <em>Roadmap</em></h1>
+        <p class="page-hero__desc">Build order from nothing to a stable survival loop. Specs live on the other archive pages.</p>
       </div>
     </header>
 
     <section class="story" data-reveal>
-      <div class="container container--narrow">
-        <p class="story__chapter">Where to read</p>
-        <ul class="pill-list reveal">
-          <li><a href="/world.html">Inside Cardinal</a></li>
-          <li><a href="/agents.html">Scintillae</a></li>
-          <li><a href="/simulation.html">Substrate</a></li>
-          <li><a href="/memory.html">Continuity</a></li>
-          <li><a href="/generations.html">Generations</a></li>
-          <li><a href="/observer.html">Observer</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="story story--panel" data-reveal>
       <div class="container">
         <p class="story__chapter">Phases</p>
         <h2 class="story__heading">MVP build order</h2>
-        <div class="story__body">
-          <p>Everything after Phase 8 waits until the survival loop is stable.</p>
-        </div>
+        <p class="story__body roadmap-intro">Everything after Phase 8 waits until the survival loop is stable. Specs live on the other archive pages.</p>
 
-        <div class="phase reveal" data-phase="01">
+        <!-- Mark progress: class="done" on each li, or class="is-complete" on .phase -->
+        <div class="phase is-complete reveal" data-phase="01">
           <div class="phase__header">
-            <span class="phase__num">Phase 01</span>
-            <span class="phase__title">Foundation</span>
+            <div class="phase__headline">
+              <span class="phase__num">Phase 01</span>
+              <span class="phase__title">Foundation</span>
+            </div>
             <span class="phase__status">not started</span>
           </div>
           <ul class="checklist">
-            <li class="is-done"><span class="check-box"></span><span>Project scaffold, folder structure, config.js</span></li>
-            <li class="is-done"><span class="check-box"></span><span>SQLite schema init, basic flush</span></li>
-            <li class="is-done"><span class="check-box"></span><span>World grid init (Float32Array, 200×200, 4 channels)</span></li>
-            <li class="is-done"><span class="check-box"></span><span>Entity spawning (flora, fauna, terrain)</span></li>
-            <li class="is-done"><span class="check-box"></span><span>Season cycle</span></li>
+            <li class="done"><span class="check-box"></span><span>Project scaffold, folder structure, config.js</span></li>
+            <li class="done"><span class="check-box"></span><span>SQLite schema init, basic flush</span></li>
+            <li class="done"><span class="check-box"></span><span>World grid init (Float32Array, 200×200, 4 channels)</span></li>
+            <li class="done"><span class="check-box"></span><span>Entity spawning (flora, fauna, terrain)</span></li>
+            <li class="done"><span class="check-box"></span><span>Season cycle</span></li>
           </ul>
         </div>
 
         <div class="phase reveal" data-phase="02">
           <div class="phase__header">
-            <span class="phase__num">Phase 02</span>
-            <span class="phase__title">Scintillae</span>
+            <div class="phase__headline">
+              <span class="phase__num">Phase 02</span>
+              <span class="phase__title">Scintillae</span>
+            </div>
             <span class="phase__status">not started</span>
           </div>
           <ul class="checklist">
@@ -80,8 +69,10 @@
 
         <div class="phase reveal" data-phase="03">
           <div class="phase__header">
-            <span class="phase__num">Phase 03</span>
-            <span class="phase__title">Substrate</span>
+            <div class="phase__headline">
+              <span class="phase__num">Phase 03</span>
+              <span class="phase__title">Substrate</span>
+            </div>
             <span class="phase__status">not started</span>
           </div>
           <ul class="checklist">
@@ -95,8 +86,10 @@
 
         <div class="phase reveal" data-phase="04">
           <div class="phase__header">
-            <span class="phase__num">Phase 04</span>
-            <span class="phase__title">Continuity</span>
+            <div class="phase__headline">
+              <span class="phase__num">Phase 04</span>
+              <span class="phase__title">Continuity</span>
+            </div>
             <span class="phase__status">not started</span>
           </div>
           <ul class="checklist">
@@ -109,8 +102,10 @@
 
         <div class="phase reveal" data-phase="05">
           <div class="phase__header">
-            <span class="phase__num">Phase 05</span>
-            <span class="phase__title">Social</span>
+            <div class="phase__headline">
+              <span class="phase__num">Phase 05</span>
+              <span class="phase__title">Social</span>
+            </div>
             <span class="phase__status">not started</span>
           </div>
           <ul class="checklist">
@@ -124,8 +119,10 @@
 
         <div class="phase reveal" data-phase="06">
           <div class="phase__header">
-            <span class="phase__num">Phase 06</span>
-            <span class="phase__title">Groq integration</span>
+            <div class="phase__headline">
+              <span class="phase__num">Phase 06</span>
+              <span class="phase__title">Groq integration</span>
+            </div>
             <span class="phase__status">not started</span>
           </div>
           <ul class="checklist">
@@ -138,8 +135,10 @@
 
         <div class="phase reveal" data-phase="07">
           <div class="phase__header">
-            <span class="phase__num">Phase 07</span>
-            <span class="phase__title">Observer dashboard</span>
+            <div class="phase__headline">
+              <span class="phase__num">Phase 07</span>
+              <span class="phase__title">Observer dashboard</span>
+            </div>
             <span class="phase__status">not started</span>
           </div>
           <ul class="checklist">
@@ -154,8 +153,10 @@
 
         <div class="phase reveal" data-phase="08">
           <div class="phase__header">
-            <span class="phase__num">Phase 08</span>
-            <span class="phase__title">Hardening</span>
+            <div class="phase__headline">
+              <span class="phase__num">Phase 08</span>
+              <span class="phase__title">Hardening</span>
+            </div>
             <span class="phase__status">not started</span>
           </div>
           <ul class="checklist">
@@ -168,10 +169,11 @@
       </div>
     </section>
 
-    <section class="story" data-reveal>
-      <div class="container container--narrow">
+    <section class="story story--dim" data-reveal>
+      <div class="container">
         <p class="story__chapter">Post-MVP</p>
         <h2 class="story__heading">Deferred until Phase 8 is stable</h2>
+        <p class="story__body">Research targets held until the survival loop is stable.</p>
         <ul class="post-list reveal">
           <li>Language emergence and token stabilization</li>
           <li>Naming system activation</li>

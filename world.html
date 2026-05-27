@@ -34,11 +34,11 @@
         <p class="story__chapter">Environment</p>
         <h2 class="story__heading">Persistent space inside Cardinal</h2>
         <div class="story__body">
-          <p>MVP runs on a 200×200 grid in memory (<code>Float32Array</code>, four channels), roughly 2km². Nothing is handed in at spawn.</p>
+          <p>MVP runs on a 200×200 grid in memory, roughly 2km². Nothing is handed in at spawn.</p>
           <p>Post-MVP, Cardinal can scale toward a ~10km continent. Expansion stays gated by Scintilla population density and exploration. Cardinal doesn't grow until something pushes into it.</p>
         </div>
-        <div class="metrics metrics--roadmap reveal-group">
-          <div class="metric"><div class="metric__value">200²</div><div class="metric__label">Grid cells (~2km²)</div></div>
+        <div class="metrics reveal-group">
+          <div class="metric"><div class="metric__value">200²</div><div class="metric__label">Grid cells</div></div>
           <div class="metric"><div class="metric__value">0</div><div class="metric__label">Starting knowledge</div></div>
         </div>
         <ul class="pill-list reveal">
@@ -51,16 +51,11 @@
       <div class="container">
         <p class="story__chapter">Environment fields</p>
         <h2 class="story__heading">Time-dependent pressure</h2>
-        <div class="data-table-wrap reveal">
-          <table class="data-table">
-            <thead><tr><th>Field</th><th>Description</th><th>Behaviour</th></tr></thead>
-            <tbody>
-              <tr><td>R(x,y,t)</td><td>Resource density</td><td>Regenerates slowly. Depletes under sustained use.</td></tr>
-              <tr><td>T(x,y,t)</td><td>Temperature</td><td>Varies by season. Causes cold and heat stress.</td></tr>
-              <tr><td>C(x,y)</td><td>Traversal cost</td><td>Static per terrain type.</td></tr>
-              <tr><td>H(x,y,t)</td><td>Hazard probability</td><td>Accumulates from events.</td></tr>
-            </tbody>
-          </table>
+        <div class="card-grid reveal-group">
+          <article class="card"><div class="card__icon"><i data-lucide="wheat" width="28" height="28"></i></div><h3 class="card__title">R(x, y, t)</h3><p class="card__text">Resource density. Regenerates slowly. Depletes under sustained use.</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="thermometer" width="28" height="28"></i></div><h3 class="card__title">T(x, y, t)</h3><p class="card__text">Temperature. Varies by season. Cold stress, heat stress.</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="footprints" width="28" height="28"></i></div><h3 class="card__title">C(x, y)</h3><p class="card__text">Traversal cost. Static per terrain type.</p></article>
+          <article class="card"><div class="card__icon"><i data-lucide="skull" width="28" height="28"></i></div><h3 class="card__title">H(x, y, t)</h3><p class="card__text">Hazard probability. Accumulates from events.</p></article>
         </div>
       </div>
     </section>
@@ -70,11 +65,8 @@
         <div>
           <p class="story__chapter">Seasonal cycle</p>
           <h2 class="story__heading">They just notice food gets harder</h2>
-          <div class="metrics metrics--roadmap reveal-group">
-            <div class="metric"><div class="metric__value">1h</div><div class="metric__label">= 1 sim day</div></div>
-            <div class="metric"><div class="metric__value">~1mo</div><div class="metric__label">= 1 sim year</div></div>
-            <div class="metric"><div class="metric__value">4</div><div class="metric__label">Seasons per year</div></div>
-          </div>
+          <div class="code-block reveal">1 real hour  = 1 simulated day
+1 real month = ~1 simulated year (4 seasons)</div>
           <div class="story__body">
             <p>Scintillae don't know what seasons are. They just notice that food gets harder to find, and it gets cold, and some of them don't survive it.</p>
             <p><strong>That's the point.</strong></p>
@@ -94,13 +86,11 @@
       </div>
     </section>
 
-    <section class="story" data-reveal>
+    <section class="story story--panel" data-reveal>
       <div class="container">
         <p class="story__chapter">Entities</p>
         <h2 class="story__heading">Discovered, not given</h2>
-        <div class="story__body">
-          <p>Prey, apex predators, flora, water, caves, and rock deposits. None of it is known at spawn. Knowledge dies with the carrier if untransmitted.</p>
-        </div>
+        <blockquote class="story__quote">None of it is known at spawn. Knowledge dies with the carrier if untransmitted.</blockquote>
         <div class="card-grid reveal-group">
           <article class="card"><div class="card__icon"><i data-lucide="rabbit" width="28" height="28"></i></div><h3 class="card__title">Small prey</h3><p class="card__text">Low risk. 0.3 hunger yield. Respawns every 5 sim days.</p></article>
           <article class="card"><div class="card__icon"><i data-lucide="beef" width="28" height="28"></i></div><h3 class="card__title">Large prey</h3><p class="card__text">High risk. 0.8 hunger yield. Respawns every 15 sim days.</p></article>
