@@ -1807,3 +1807,129 @@ pre.code-block {
     width: 100%;
   }
 }
+
+/* ── Run cards (field notes) ────────────────────────────────────────────── */
+
+.run-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.run-card + .run-card {
+  margin-top: 0;
+}
+
+.run-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.run-card__num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--crimson-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 0.75rem;
+}
+
+.run-card__phase {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.run-card__outcome {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.run-card__outcome--active {
+  background: rgba(251, 113, 133, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+}
+
+.run-card__outcome--collapse {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.run-card__outcome--stable {
+  background: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.25);
+}
+
+.run-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.run-card__meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.run-card__body {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.run-card__body p + p { margin-top: 0.75rem; }
+
+.run-card__body code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background: var(--bg-code);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+.run-card__findings {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 0.25rem;
+}
+
+.run-card__findings h4 {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin: 0 0 0.65rem;
+}
+
+.run-card__findings ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.run-card__findings li + li { margin-top: 0.3rem; }

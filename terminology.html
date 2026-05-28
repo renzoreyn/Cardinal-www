@@ -134,6 +134,56 @@
         </div>
       </div>
     </section>
+
+    <section class="story story--dim" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Technical glossary</p>
+        <h2 class="story__heading">How the Substrate thinks about time</h2>
+        <div class="card-grid reveal-group">
+          <article class="card">
+            <div class="card__icon"><i data-lucide="zap" width="28" height="28"></i></div>
+            <h3 class="card__title">Micro tick</h3>
+            <p class="card__text">20 per real second. Physics, movement, resource consumption. The world's heartbeat.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="brain" width="28" height="28"></i></div>
+            <h3 class="card__title">Cognitive tick</h3>
+            <p class="card__text">Every 5 micro ticks. Scintilla thinks — evaluates needs, selects action, reads and writes Continuity.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="book-open" width="28" height="28"></i></div>
+            <h3 class="card__title">Chronicle tick</h3>
+            <p class="card__text">Every simulated day (1 real hour). Event aggregation, memory decay, history compression, cultural marker evaluation.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="sun-moon" width="28" height="28"></i></div>
+            <h3 class="card__title">Day phase</h3>
+            <p class="card__text">Derived from micro tick position within the current sim day. Affects perception radius, fear baseline, prey behavior, stamina cost.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="leaf" width="28" height="28"></i></div>
+            <h3 class="card__title">Stock</h3>
+            <p class="card__text">Each resource entity has a finite stock — berries 15–40 units, prey herd 4–12. Depletes on harvest. Respawns with a new random amount.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="siren" width="28" height="28"></i></div>
+            <h3 class="card__title">Taunt</h3>
+            <p class="card__text">Fauna threat accumulator. Rises when Scintillae are nearby. Above threshold: apex chases, prey flees. Below threshold: patrol or wander.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="activity" width="28" height="28"></i></div>
+            <h3 class="card__title">Stamina</h3>
+            <p class="card__text">Fast-cycling physical energy. Drains on hunt, flee, night movement. Recovers passively. Exhausted Scintillae slow down and are forced to rest.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><i data-lucide="target" width="28" height="28"></i></div>
+            <h3 class="card__title">Goal commit</h3>
+            <p class="card__text">How long a Scintilla holds a goal before re-evaluating. Long enough to reach targets. Short enough to respond to critical need spikes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="site-footer"></div>

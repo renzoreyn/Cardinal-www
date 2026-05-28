@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cardinal field notes — observations from each simulation run." />
+  <title>Field Notes | Cardinal</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="is-loading" data-page="/runs.html">
+  <div class="page-loader" aria-hidden="true"><div class="page-loader__mark">Cardinal</div><div class="page-loader__bar"><span></span></div><p class="page-loader__hint">loading research archive</p></div>
+
+  <div id="site-header"></div>
+
+  <main>
+    <header class="page-hero">
+      <div class="hero__bg"><div class="hero__orb hero__orb--1"></div><div class="hero__orb hero__orb--2"></div><div class="hero__grid"></div></div>
+      <div class="page-hero__inner container">
+        <div class="page-hero__icon"><i data-lucide="scroll" width="40" height="40"></i></div>
+        <h1 class="page-hero__title">Field <em>Notes</em></h1>
+        <p class="page-hero__desc">Every run is data. Collapse, stagnation, and survival are all outcomes worth recording.</p>
+      </div>
+    </header>
+
+    <section class="story" data-reveal>
+      <div class="container">
+        <p class="story__chapter">Phase 2 — Survival loop</p>
+        <h2 class="story__heading">Run log</h2>
+
+        <div class="run-card reveal">
+          <div class="run-card__header">
+            <div>
+              <span class="run-card__num">Run 05</span>
+              <span class="run-card__phase">Phase 2</span>
+            </div>
+            <span class="run-card__outcome run-card__outcome--active">ongoing</span>
+          </div>
+          <div class="run-card__meta">
+            <span><i data-lucide="calendar" width="13" height="13"></i> Spring Year 0</span>
+            <span><i data-lucide="users" width="13" height="13"></i> 30 spawned — 10 alive at Day 4</span>
+            <span><i data-lucide="map-pin" width="13" height="13"></i> 1000×1000 Azgaar grid</span>
+          </div>
+          <div class="run-card__body">
+            <p>First run on the 1000×1000 real-geography grid with biome-gated entity spawning. Group B spawned at (843–850, 425) — a resource desert — and was fully extinct by t3800 of Day 0. Group C mostly collapsed by Day 2. Group A landed in the spawn haven and stabilised at 92% average satiety by Day 4.</p>
+            <p>s_a1 and s_a2 have reached 100% trust with 138 interactions. Reproduction conditions not yet met — shelter is the suspected blocker. s_a5 reached 28yr with 5 social relationships. No forage failure events observed for the surviving group.</p>
+          </div>
+          <div class="run-card__findings">
+            <h4>Key findings</h4>
+            <ul>
+              <li>Spawn anchor algorithm based on grid resource channel is unreliable — does not reflect actual entity density post-spawn</li>
+              <li>Groups B and C died in entity-sparse zones despite adequate grid R values</li>
+              <li>Core survival loop confirmed working for Group A — commit windows and drain rates are correct</li>
+              <li>Socialise interaction count inflated — cooldown helps but 138 interactions in 4 days still high</li>
+              <li>191 apex on the map — too dense, inflates fear baseline constantly</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="run-card reveal">
+          <div class="run-card__header">
+            <div>
+              <span class="run-card__num">Run 04</span>
+              <span class="run-card__phase">Phase 2</span>
+            </div>
+            <span class="run-card__outcome run-card__outcome--collapse">extinction</span>
+          </div>
+          <div class="run-card__meta">
+            <span><i data-lucide="calendar" width="13" height="13"></i> Day 0–1</span>
+            <span><i data-lucide="users" width="13" height="13"></i> 30 spawned — 0 survived</span>
+            <span><i data-lucide="map-pin" width="13" height="13"></i> 200×200 procedural grid</span>
+          </div>
+          <div class="run-card__body">
+            <p>All deaths from starvation. Goal commit window was 60 ticks; food 8 cells away required 160 ticks to reach. Agents walked toward targets for 60 ticks, replanned, walked again, never arrived anywhere. Every agent starved while technically pursuing food.</p>
+          </div>
+          <div class="run-card__findings">
+            <h4>Key findings</h4>
+            <ul>
+              <li>Root cause: commit window (60t) shorter than travel time (160t for 8-cell distance)</li>
+              <li>700+ socialise interactions recorded for adjacent pair — cooldown system added after this run</li>
+              <li>Cardinal Time stopped interpolating — client-side *24 multiplier removed, broke live clock</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="run-card reveal">
+          <div class="run-card__header">
+            <div>
+              <span class="run-card__num">Run 01–03</span>
+              <span class="run-card__phase">Phase 2</span>
+            </div>
+            <span class="run-card__outcome run-card__outcome--collapse">extinction</span>
+          </div>
+          <div class="run-card__meta">
+            <span><i data-lucide="calendar" width="13" height="13"></i> Day 0–4</span>
+            <span><i data-lucide="users" width="13" height="13"></i> 30 spawned — 0 survived</span>
+            <span><i data-lucide="map-pin" width="13" height="13"></i> 200×200 procedural grid</span>
+          </div>
+          <div class="run-card__body">
+            <p>Three consecutive extinction runs. All deaths from starvation. The forage action was firing but never completing — <code>moveToward()</code> moved at 0.05 units/tick, food was 8+ cells away, and the policy re-selected the closest prey every cognitive tick, constantly interrupting approach. Agents showed 16,000+ forage interactions in 4 days with zero successful eats. One anomaly: s_b11 reached 88% satiety, suggesting the execution path was valid but the targeting lock was broken for all others.</p>
+          </div>
+          <div class="run-card__findings">
+            <h4>Key findings</h4>
+            <ul>
+              <li>Forage execution broken: target lock not persisted across cognitive ticks</li>
+              <li>No persistent goal state — agents chose a new target every 5 micro ticks</li>
+              <li>Wander behavior was random-angle-per-tick — drunk walk, no ground covered</li>
+              <li>Entity spawning not biome-gated — water sources in forests, prey in ocean</li>
+              <li>200×200 grid mismatch with 1000×1000 Azgaar map — coordinate scaling errors throughout</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="story story--dim" data-reveal>
+      <div class="container container--narrow">
+        <p class="story__chapter">Protocol</p>
+        <h2 class="story__heading">How runs are observed</h2>
+        <div class="story__body">
+          <p>Each run is allowed to reach its natural conclusion — extinction, stable equilibrium, or reproduction. Runs are not terminated early unless a fatal infrastructure bug is confirmed.</p>
+          <p>Observations are recorded by day: entity counts, survival rates, notable events (first reproduction, first group contact, first resource depletion cycle). Memory tab snapshots are taken on notable agents every 2–3 days.</p>
+          <p>The Administrator does not intervene in outcomes. God commands exist only for infrastructure testing, not to prevent collapse.</p>
+        </div>
+        <blockquote class="story__quote">
+          Collapse is data. Extinction is data. Survival is data. None of these outcomes is a failure.
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="/assets/js/nav-config.js"></script>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/context-menu.js"></script>
+  <script src="/assets/js/animations.js"></script>
+</body>
+</html>
