@@ -18,7 +18,7 @@ const CARDS = [
 
 const METRICS = [
   { value: '1000²', label: 'Grid (live)' },
-  { value: '30', label: 'Starting Scintillae — 3 groups, dispersed' },
+  { value: '30', label: 'Starting Scintillae - 3 groups, dispersed' },
   { value: '1h', label: '= 1 sim day' },
   { value: '~1mo', label: '= 1 sim year' },
   { value: '4', label: 'Seasons per year' },

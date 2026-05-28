@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
   title: 'Roadmap | Cardinal',
-  description: 'Cardinal build roadmap — from substrate to civilisation emergence.',
+  description: 'Cardinal build roadmap - from substrate to civilisation emergence.',
 }
 
 const PHASES = [
@@ -14,9 +14,9 @@ const PHASES = [
     items: [
       'Project scaffold, folder structure, config.js',
       'SQLite schema, flush-to-disk on chronicle tick',
-      'World grid — Float32Array, 4 channels (R/T/C/H)',
+      'World grid - Float32Array, 4 channels (R/T/C/H)',
       'Entity spawning (flora, fauna, terrain)',
-      'Season cycle — 4 seasons, 24 days each, 1hr = 1 sim day',
+      'Season cycle - 4 seasons, 24 days each, 1hr = 1 sim day',
     ]
   },
   {
@@ -24,12 +24,12 @@ const PHASES = [
     items: [
       'Scintilla spawn, needs decay (satiety / thirst / fatigue / health / safety / fear)',
       'Aging and life stages (child / adolescent / adult / elder)',
-      'Death — starvation, thirst, predator, old age',
-      'Perception — local radius, fog of war, biome modifiers',
-      'Heuristic policy — action selection by need urgency',
-      'Persistent goal system — commit windows, directional wander',
-      'Stamina — fast-cycling bar, drains on hunt/flee, slows movement',
-      'Skills via procedural memory — forage/hunt/drink improve with practice',
+      'Death - starvation, thirst, predator, old age',
+      'Perception - local radius, fog of war, biome modifiers',
+      'Heuristic policy - action selection by need urgency',
+      'Persistent goal system - commit windows, directional wander',
+      'Stamina - fast-cycling bar, drains on hunt/flee, slows movement',
+      'Skills via procedural memory - forage/hunt/drink improve with practice',
     ]
   },
   {
@@ -44,86 +44,86 @@ const PHASES = [
   {
     num: '04', title: 'World fidelity', done: true,
     items: [
-      'Azgaar map integration — 1000×1000 voronoi grid, real biome data',
-      'Biome rasterization — voronoi polygons stamped into grid, per-cell biome lookup',
-      'Entity biome gating — water only on river/coastline, prey only on plains/forest',
-      'Resource stock system — each flora/fauna has finite stock, depletes, respawns with new random amount',
-      'Fauna AI — taunt system, apex chase, prey flock/flee, large prey charge',
-      'Day/night cycle — perception penalty, fear baseline, stamina cost, canvas overlay',
-      'Land cell precomputation — iterate only non-ocean cells in regen/decay loops',
+      'Azgaar map integration - 1000×1000 voronoi grid, real biome data',
+      'Biome rasterization - voronoi polygons stamped into grid, per-cell biome lookup',
+      'Entity biome gating - water only on river/coastline, prey only on plains/forest',
+      'Resource stock system - each flora/fauna has finite stock, depletes, respawns with new random amount',
+      'Fauna AI - taunt system, apex chase, prey flock/flee, large prey charge',
+      'Day/night cycle - perception penalty, fear baseline, stamina cost, canvas overlay',
+      'Land cell precomputation - iterate only non-ocean cells in regen/decay loops',
     ]
   },
   {
     num: '05', title: 'World generation', done: false,
     items: [
-      'Chunk-based entity placement — 50×50 cell chunks, feature budgets per biome type',
-      'Biome feature budgets — guaranteed minimums, controlled maximums per chunk',
-      'Apex separation enforcement — minimum distance between predator spawns (~80 cells)',
-      'Spawn anchor from entity density — post-gen scan, not grid resource channel',
-      'Haven lock — anchor 0 always at Azgaar spawnHavenCenter',
+      'Chunk-based entity placement - 50×50 cell chunks, feature budgets per biome type',
+      'Biome feature budgets - guaranteed minimums, controlled maximums per chunk',
+      'Apex separation enforcement - minimum distance between predator spawns (~80 cells)',
+      'Spawn anchor from entity density - post-gen scan, not grid resource channel',
+      'Haven lock - anchor 0 always at Azgaar spawnHavenCenter',
     ]
   },
   {
     num: '06', title: 'Observer split', done: false,
     items: [
-      'Admin.js split — clean JSON API endpoints (Railway) vs frontend console (Vercel)',
+      'Admin.js split - clean JSON API endpoints (Railway) vs frontend console (Vercel)',
       'CORS + bearer token auth replacing session cookie',
-      'Cardinal Time smooth interpolation — server source of truth, 5s poll, client-side fill',
-      'Event feed filter — type dropdown (deaths / food / social / all), activity counter in strip',
-      'Map inspect mode — click any entity/scintilla for inline detail panel',
+      'Cardinal Time smooth interpolation - server source of truth, 5s poll, client-side fill',
+      'Event feed filter - type dropdown (deaths / food / social / all), activity counter in strip',
+      'Map inspect mode - click any entity/scintilla for inline detail panel',
     ]
   },
   {
     num: '07', title: 'Continuity', done: false,
     items: [
-      'Memory layers active — episodic / semantic / procedural / social decay and reinforcement',
-      'Knowledge artifacts — lifecycle (spread / mutate / decay / myth), confidence tracking',
-      'Knowledge gates behavior — agents who know a location path there, those who don\'t wander',
-      'Fear distortion — memories recalled under high fear are less accurate',
-      'Elder knowledge value — elder procedural memory stabilises group survival rate',
+      'Memory layers active - episodic / semantic / procedural / social decay and reinforcement',
+      'Knowledge artifacts - lifecycle (spread / mutate / decay / myth), confidence tracking',
+      'Knowledge gates behavior - agents who know a location path there, those who don\'t wander',
+      'Fear distortion - memories recalled under high fear are less accurate',
+      'Elder knowledge value - elder procedural memory stabilises group survival rate',
     ]
   },
   {
     num: '08', title: 'Social layer', done: false,
     items: [
-      'Reproduction and gestation — trust threshold, bonding duration, shelter condition',
-      'Genetic inheritance with mutation — trait weighted average + noise',
-      'Group identity — in-group vs stranger distinction in policy',
+      'Reproduction and gestation - trust threshold, bonding duration, shelter condition',
+      'Genetic inheritance with mutation - trait weighted average + noise',
+      'Group identity - in-group vs stranger distinction in policy',
       'Group formation detection and DB write',
-      'Primitive signals — approach / flee / follow / threat tokens',
-      'Terrain memory — desire paths accumulate from repeated movement, decay slowly',
-      'Death leaves traces — corpse as scavenger resource, fear memory trigger for witnesses',
+      'Primitive signals - approach / flee / follow / threat tokens',
+      'Terrain memory - desire paths accumulate from repeated movement, decay slowly',
+      'Death leaves traces - corpse as scavenger resource, fear memory trigger for witnesses',
     ]
   },
   {
     num: '09', title: 'Groq integration', done: false,
     items: [
-      'Chronicle narration — one paragraph per sim day from event stream, per-group + global',
-      'Continuity distillation — episodic → semantic compression via Groq',
-      'Communication utterances — inter-scintilla signals with LLM-generated content',
+      'Chronicle narration - one paragraph per sim day from event stream, per-group + global',
+      'Continuity distillation - episodic → semantic compression via Groq',
+      'Communication utterances - inter-scintilla signals with LLM-generated content',
       'Groq client with rate limit handling, retry, token budget',
     ]
   },
   {
     num: '10', title: 'Language', done: false,
     items: [
-      'Signal co-occurrence tracking — repeated signal + context = weak association',
-      'Token stabilisation — reinforced associations become shared tokens',
-      'Token transmission — imitation spreads stable tokens to nearby agents',
-      'Dialect divergence — cross-group token overlap tracking',
-      'Semantic drift — meaning of a token changes over 10 generations',
-      'Naming system — scintillae develop names for recurring entities/locations',
+      'Signal co-occurrence tracking - repeated signal + context = weak association',
+      'Token stabilisation - reinforced associations become shared tokens',
+      'Token transmission - imitation spreads stable tokens to nearby agents',
+      'Dialect divergence - cross-group token overlap tracking',
+      'Semantic drift - meaning of a token changes over 10 generations',
+      'Naming system - scintillae develop names for recurring entities/locations',
     ]
   },
   {
     num: '11', title: 'Institutional emergence', done: false,
     items: [
-      'Settlements — repeated return to fixed location becomes home, detectable as DB pattern',
-      'Leadership — high trust + resource success → proto-authority, others defer',
-      'Norms — consistently punished/rewarded behaviors become social rules',
-      'Trade routes — resource exchange paths that survive across individual agents',
-      'Rituals — repeated group behaviors with no direct survival function',
-      'Farming seed — agents tending depleted resource locations before respawn',
+      'Settlements - repeated return to fixed location becomes home, detectable as DB pattern',
+      'Leadership - high trust + resource success → proto-authority, others defer',
+      'Norms - consistently punished/rewarded behaviors become social rules',
+      'Trade routes - resource exchange paths that survive across individual agents',
+      'Rituals - repeated group behaviors with no direct survival function',
+      'Farming seed - agents tending depleted resource locations before respawn',
     ]
   },
 ]

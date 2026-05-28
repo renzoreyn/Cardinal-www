@@ -54,9 +54,9 @@ export default function Footer() {
         fontSize: '0.75rem', color: 'var(--text-dim)',
         display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '0.35rem',
       }}>
-        <span>Cardinal — autonomous civilization simulation</span>
+        <span>Cardinal - autonomous civilization simulation</span>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
-          Made with <Heart size={12} fill="var(--crimson-bright)" stroke="var(--crimson-bright)" /> using Node.js + Groq
+          Made with <Heart size={12} fill="var(--crimson-bright)" stroke="var(--crimson-bright)" /> by <a href="https://renzoreyn.dev" target="_blank">@renzoreyn</a>
         </span>
       </div>
     </footer>
