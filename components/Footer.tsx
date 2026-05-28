@@ -56,7 +56,7 @@ export default function Footer() {
       }}>
         <span>Cardinal - autonomous civilization simulation</span>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
-          Made with <Heart size={12} fill="var(--crimson-bright)" stroke="var(--crimson-bright)" /> by <a href="https://renzoreyn.dev" target="_blank">@renzoreyn</a>
+          Made with <Heart size={12} fill="var(--crimson-bright)" stroke="var(--crimson-bright)" /> by @renzoreyn
         </span>
       </div>
     </footer>
