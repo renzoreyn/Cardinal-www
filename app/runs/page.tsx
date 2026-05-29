@@ -26,7 +26,7 @@ const RUNS = [
       '191 apex still spawning - density unchanged from Run 05, fear baseline remains artificially elevated',
       'Spawn anchor biome scoring working (all three groups landed on river cells) but resource=%.2f format bug still present',
       'No survival data recoverable for this run - without chronicle ticks, there are no DB records of what happened',
-      'Priority before Run 07: fix dayPhase reference, add chronicle smoke test on boot',
+      'Priority before Run 06: fix dayPhase reference, add chronicle smoke test on boot',
     ],
   },
   {
