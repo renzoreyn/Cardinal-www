@@ -31,9 +31,9 @@ const STACK = [
   { title: 'Engine', text: 'Node.js' },
   { title: 'Persistence', text: 'SQLite / better-sqlite3' },
   { title: 'LLM', text: 'Groq' },
-  { title: 'World grid', text: 'Float32Array, 1000×1000, 4 channels — biomes from Azgaar voronoi rasterization' },
+  { title: 'World grid', text: 'Float32Array' },
   { title: 'Deploy', text: 'Railway' },
-  { title: 'Observer', text: 'Express + HTML/CSS/JS (Railway) — Vercel frontend split planned Phase 06' },
+  { title: 'Observer', text: 'Express + HTML/CSS/JS (Railway)' },
 ]
 
 const EVENTS = [
