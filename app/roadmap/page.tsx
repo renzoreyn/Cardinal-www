@@ -16,7 +16,7 @@ const PHASES = [
       'SQLite schema, flush-to-disk on chronicle tick',
       'World grid - Float32Array, 4 channels (R/T/C/H)',
       'Entity spawning (flora, fauna, terrain)',
-      'Season cycle - 4 seasons, 24 days each, 1hr = 1 sim day',
+      'Season cycle - 4 seasons, 36 days each, 20 min = 1 sim day',
     ]
   },
   {

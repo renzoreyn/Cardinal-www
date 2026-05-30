@@ -53,7 +53,7 @@ export default function AgentsPage() {
           </Reveal>
           <Reveal delay={0.15}>
             <div style={{ color: 'var(--text-muted)', maxWidth: '52ch' }}>
-              <p style={{ margin: '0 0 1rem' }}>Default MVP: 16 Scintillae, resource-moderate zone, dispersed spawn. Must find each other.</p>
+              <p style={{ margin: '0 0 1rem' }}>Default run: 30 Scintillae in 3 groups, resource-moderate zone, dispersed spawn. Must find each other.</p>
               <p style={{ margin: 0 }}>Stress-test runs: 4 Scintillae in a harsh biome. Open sandbox: 30 in a valley with rivers on three sides. The starting condition is part of the experiment design.</p>
             </div>
           </Reveal>

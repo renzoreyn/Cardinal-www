@@ -18,8 +18,8 @@ const FIELDS = [
 
 const ENTITIES = [
   { title: 'Small prey', text: 'Low risk. 0.4 hunger yield (stock 4–12 per herd). Respawns with random new stock.' },
-  { title: 'Large prey', text: 'High risk. 0.8 hunger yield. Respawns every 15 sim days.' },
-  { title: 'Apex', text: 'Lethal. Patrols a radius, attacks on proximity. Respawns every 30 sim days.' },
+  { title: 'Large prey', text: 'High risk. 1.2 hunger yield. Respawns every 20 sim days.' },
+  { title: 'Apex', text: 'Lethal. Patrols a radius, attacks on proximity. Respawns every 40 sim days.' },
   { title: 'Flora', text: 'Berry bush, fruit tree, hardwood, reed. Seasonal availability. Some finite.' },
   { title: 'Water source', text: 'Infinite. Detectable from 8 cells. First Scintilla to find it has a survival edge.' },
   { title: 'Terrain objects', text: 'Cave (natural shelter), rock deposit (finite, never respawns). Scarcity drives migration.' },
@@ -104,7 +104,7 @@ export default function WorldPage() {
             </Reveal>
             <Reveal delay={0.1}>
               <pre style={{ margin: '0 0 1.5rem', padding: '1.15rem 1.25rem', background: 'var(--bg-code)', border: '1px solid var(--border-soft)', borderRadius: '10px', fontFamily: 'var(--font-mono)', fontSize: '0.8125rem', lineHeight: 1.55, color: 'var(--text-muted)', overflowX: 'auto' }}>
-                {`1 real hour  = 1 simulated day\n1 real month = ~1 simulated year (4 seasons)`}
+                {`1 real minute = 72 simulated days\n20 real minutes = 1 simulated day\n2 real days = 1 simulated year (4 seasons, 144 days)`}
               </pre>
             </Reveal>
             <Reveal delay={0.15}>

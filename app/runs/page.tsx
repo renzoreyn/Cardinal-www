@@ -8,7 +8,32 @@ export const metadata: Metadata = {
 }
 
 const RUNS = [
-    {
+  {
+    num: 'Run 06',
+    phase: 'Phase 8',
+    outcome: 'ongoing',
+    date: 'Spring Year 0 - Day 0 onward',
+    pop: '30 spawned - generation 1 born',
+    map: '1000×1000 Azgaar grid',
+    body: [
+      'First run to produce a second generation. The full reproduction chain fired end to end: agents bonded over multiple days, gathered materials, built shelter, paired, gestated, and gave birth. Six generation-1 children were recorded (s_a31 through s_b35) from gen-0 parents across groups a and b, each tagged with parentage and birth location. The generational system works.',
+      'Reproduction had been stalled across every prior run by a single gate: nobody held shelter. Shelter required either a cave (which only spawns on mountain biomes, far from the valley where agents actually live) or building one - and the build action was never being selected. Two fixes unblocked it. First, building was made an investable action: an agent must gather hardwood before it can build, so shelter emerges from agents doing well enough to afford the detour rather than being handed to them. Second, the bonding counter was corrected. It had been incrementing on every socialise interaction rather than once per day, so a pair hit the five-day bonding threshold in minutes - which is why earlier builds and pairings fired on day 0. Bonding now accrues at most once per simulated day, so five bonding days means five distinct days of contact.',
+      'Apex predation remains the dominant cause of death but is no longer population-threatening at the tuned spawn density and aggression range. A new minor death cause appeared - overconsumption - traced to the raised forage yields letting agents eat past the gorge threshold; foraging now stops at a safe satiety ceiling below that threshold.',
+      'Cardinal Time was running on two disagreeing clocks - the page load derived time from the simulation tick counter while the status poll used a separate wall-clock formula at a stale multiplier, so the displayed day drifted from the real day and jumped on refresh. All time sources now derive from one tick-based value. The admin console was also rebuilt as a terminal-style interface, mobile-first, to stop the readout strip and tables overflowing on phones.',
+      'Phases 7 and 8 (continuity and social) are implemented but have not yet run live: memory decay and reinforcement, fear distortion, knowledge artifacts with a spread/mutate/decay/myth lifecycle, emergent group detection, in-group versus stranger trust, and corpse traces. The logic is unit-tested in isolation but unobserved in a full simulation. Run 07 is the first test of those systems.',
+    ],
+    findings: [
+      'First successful reproduction and live birth - generation 1 exists, six children recorded',
+      'Shelter bottleneck resolved: build-from-gathered-materials path plus bonding counter fix',
+      'Bonding now day-gated (one increment per sim day) - no more instant day-0 pairing',
+      'Overconsumption deaths fixed by capping forage at a safe satiety ceiling',
+      'Cardinal Time unified to a single tick-derived source - no more drift or refresh jump',
+      'Admin console rebuilt terminal-style and mobile-first',
+      'Phases 7 & 8 deployed but not yet run - Run 07 will be their first live test',
+      'Outstanding: SQLite is on ephemeral storage - every redeploy wipes the world, needs a persistent volume before any long run',
+    ],
+  },
+  {
     num: 'Run 05',
     phase: 'Phase 4',
     outcome: 'concluded',
@@ -68,11 +93,13 @@ const RUNS = [
 const OUTCOME_COLORS: Record<string, string> = {
   ongoing: 'rgba(34,197,94,0.15)',
   extinction: 'rgba(225,29,72,0.12)',
+  concluded: 'rgba(148,163,184,0.12)',
 }
 
 const OUTCOME_TEXT: Record<string, string> = {
   ongoing: '#4ade80',
   extinction: 'var(--accent)',
+  concluded: '#94a3b8',
 }
 
 export default function RunsPage() {
